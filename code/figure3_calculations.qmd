@@ -1,0 +1,840 @@
+---
+title: "Figure3"
+author: "Hanneke Leegwater"
+date: "`r Sys.Date()`"
+format: 
+  html:
+    self-contained: true
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    df-print: kable
+---
+
+## Template Used
+
+LACDR-ISA - Assay (General) v1.0.0
+
+## Title
+
+`r rmarkdown::metadata$title`
+
+## Date (dd-MM-yyyy)
+
+`r format(Sys.time(), format = "%d-%m-%Y")`
+
+## Description or Purpose
+
+Build Figure 3
+
+### Background
+
+### Data sources
+
+-   Loadings and weights for Factor 1 from Figure 1
+-   Gene expression from Koedoot et al. (PMID:33790333)
+-   Metadata from Leegwater et al. (PMID: 40763903)
+-   Patient gene expression data from TCGA
+-   Workflow created in drawio
+-   Pathway and gene mappings from Reactome (Ensmbl2Reactome.txt). The source is:
+
+Reactome, from https://reactome.org/download-data downloaded on 20-01-2025
+
+And the Zenodo release v91 from Dec 2024 https://zenodo.org/records/14518331 downloaded on 20-01-2025 I also use the same all_transport_pathway_genes.csv as in Figure 2.
+
+### Analysis plan
+
+-   A: Workflow on how we selected genes
+-   B-E: Differentially expressed metabolic genes in cell lines
+
+## Results
+
+### Preparations
+
+#### Load R libraries
+
+```{r}
+library(tidyverse)
+library(here)
+library(AnnotationDbi)
+library(org.Hs.eg.db)
+library(DESeq2)
+library(KEGGREST)
+```
+
+#### Visualization settings for the report
+
+```{r}
+options(digits = 3) # visualizations of tables
+theme_set(theme_classic())
+```
+
+#### Custom functions
+
+```{r}
+source(here("code/functions/helpers.R"))
+```
+
+#### Set input and output directories
+
+Show base path to the project that is used in the analysis.
+
+```{r}
+here()
+```
+
+Set output data directory and create if it does not exist.
+
+```{r}
+datestamp <- get_datestamp()
+data_dir <- here("data", "figure_3")
+output_dir <- set_output_dir(here("manuscript", str_glue("Figure3_{datestamp}")))
+```
+
+### Figure 3A
+
+#### Use the same set of gene names throughout datasets
+
+```{r}
+gene_identifier_table <- read_csv(here(
+  "data", "figure_2", "RNAseq_log2normalized_counts_celllines.csv"
+)) |>
+  mutate(NCBI_Gene_ID = as.character(NCBI_Gene_ID)) |>
+  dplyr::select(gene_symbol, EnsemblID, NCBI_Gene_ID) |>
+  distinct()
+dim(gene_identifier_table)
+```
+
+#### Length of metabolic gene lists
+
+##### Gene ontology
+
+```{r}
+columns(org.Hs.eg.db)
+```
+
+Get genes associated with gene ontology <GO:0008152> metabolic process [link](https://amigo.geneontology.org/amigo/term/GO:0008152).
+
+```{r}
+columns(org.Hs.eg.db)
+get_gene_symbols_GO <- function(GO_term) {
+  column_names <- c("SYMBOL", "ENSEMBL", "ENTREZID", "GENENAME")
+  gene_symbols <- AnnotationDbi::select(org.Hs.eg.db,
+    keys = GO_term,
+    columns = column_names,
+    keytype = "GOALL"
+  ) |>
+    dplyr::select(-EVIDENCEALL) |>
+    distinct() |>
+    arrange(SYMBOL) |>
+    dplyr::rename(gene_symbol = SYMBOL)
+  print(str_glue("{GO_term} has {nrow(gene_symbols)} rows and {length(unique(gene_symbols$gene_symbol))} unique gene symbols"))
+  return(gene_symbols)
+}
+```
+
+```{r}
+GO_metabolic_genes <- get_gene_symbols_GO("GO:0008152")
+
+write_csv(
+  GO_metabolic_genes,
+  here(output_dir, "metabolic_process_GO.0008152.csv")
+)
+```
+
+##### KEGG
+
+Following tutorial [KEGGREST](https://bioconductor.org/packages/release/bioc/vignettes/KEGGREST/inst/doc/KEGGREST-vignette.html)
+
+```{r}
+# Get the human metabolism for kegg & extract all pathways
+human_metabolism_map <- keggGet("hsa01100")
+human_metabolism_map[[1]]$NAME
+related_pathways <- names(human_metabolism_map[[1]]$REL_PATHWAY)
+head(related_pathways)
+
+# Get all genes from pathways
+pathways_from_KEGG <- list()
+for (nr in 1:length(related_pathways)) {
+  pathway_info <- keggGet(related_pathways[nr])
+  pathways_from_KEGG[[pathway_info[[1]]$ENTRY]] <- pathway_info[[1]]$GENE
+}
+
+# The gene column has even numbers for gene symbols and odd numbers for matching entrez identifiers.
+# Extract per pathway and merge into one data frame
+KEGG_metabolic_genes <- map_dfr(names(pathways_from_KEGG), function(pathway_name) {
+  pathway <- pathways_from_KEGG[[pathway_name]]
+  res <- data.frame(
+    pathway_name = pathway_name,
+    entrez_ID = pathway[seq(1, length(pathway), by = 2)],
+    gene_symbol = pathway[seq(2, length(pathway), by = 2)]
+  )
+  return(res)
+}) |>
+  # Split the gene symbol column into gene symbol and gene name
+  separate(gene_symbol, into = c("gene_symbol", "gene_name"), sep = ";", remove = TRUE)
+
+dim(KEGG_metabolic_genes)
+head(KEGG_metabolic_genes)
+
+# Quality control: Check one that is missing a gene symbol.
+# This indeed matches a non-gene: https://www.ncbi.nlm.nih.gov/gene/107984365
+KEGG_metabolic_genes[468, ]
+
+write_csv(KEGG_metabolic_genes, here(output_dir, "KEGG_metabolic_genes_hsa01100.csv"))
+```
+
+##### Recon3D
+
+```{r}
+Recon3D_genes <- read_csv(here(
+  data_dir,
+  "genes_from_recon3D_301.csv"
+))
+```
+
+##### Reactome
+
+```{r}
+metabolic_pathways <- read_csv(here(
+  data_dir,
+  "reactome_all_metabolic_pathways.csv"
+))
+
+Reactome_metabolic_genes <- read_tsv(
+  here(
+    data_dir,
+    "Ensembl2Reactome.txt"
+  ),
+  col_names = c("Source_ID", "Reactome_ID", "URL", "Event_Name", "Evidence_Code", "Species")
+) |>
+  filter(Species == "Homo sapiens") |>
+  filter(str_detect(Source_ID, "ENSG")) |>
+  # Filter to keep metabolic genes
+  filter(Reactome_ID %in% metabolic_pathways$Reactome_ID)
+dim(Reactome_metabolic_genes)
+head(Reactome_metabolic_genes)
+
+metabolic_transporters <- read_csv(here(
+  "data", "figure_2",
+  "all_transport_pathway_genes.csv"
+))
+dim(metabolic_transporters)
+head(metabolic_transporters)
+
+stopifnot(all(colnames(Reactome_metabolic_genes) == colnames(metabolic_transporters)))
+
+Reactome_metabolic_genes <- Reactome_metabolic_genes |>
+  bind_rows(metabolic_transporters) |>
+  left_join(gene_identifier_table, by = c("Source_ID" = "EnsemblID"))
+dim(Reactome_metabolic_genes)
+write_csv(Reactome_metabolic_genes, here(output_dir, "reactome_metabolic_pathway_gene_info.csv"))
+```
+
+##### Descriptive statistics for the manuscript
+
+Number of gene symbols in each list
+
+```{r}
+extract_gene_symbols <- function(df) {
+  df |>
+    filter(!is.na(gene_symbol)) |>
+    pull(gene_symbol) |>
+    unique()
+}
+count_unique_genes <- function(df) {
+  df |>
+    extract_gene_symbols() |>
+    length()
+}
+count_unique_genes(KEGG_metabolic_genes)
+count_unique_genes(GO_metabolic_genes)
+count_unique_genes(Recon3D_genes)
+count_unique_genes(Reactome_metabolic_genes)
+```
+
+Prepare for supplementary Upset plot?
+
+```{r}
+count_overlapping_genes <- function(df1, df2, df3 = NULL, df4 = NULL) {
+  nr_overlaps <- intersect(extract_gene_symbols(df1), extract_gene_symbols(df2)) |>
+    length()
+  if (!is.null(df3) && !is.null(df4)) {
+    nr_overlaps <- intersect(
+      intersect(extract_gene_symbols(df1), extract_gene_symbols(df2)),
+      intersect(extract_gene_symbols(df3), extract_gene_symbols(df4))
+    ) |>
+      length()
+  }
+  return(nr_overlaps)
+}
+# pairwise overlaps
+count_overlapping_genes(KEGG_metabolic_genes, GO_metabolic_genes)
+count_overlapping_genes(KEGG_metabolic_genes, Recon3D_genes)
+count_overlapping_genes(GO_metabolic_genes, Recon3D_genes)
+count_overlapping_genes(KEGG_metabolic_genes, Reactome_metabolic_genes)
+count_overlapping_genes(GO_metabolic_genes, Reactome_metabolic_genes)
+count_overlapping_genes(Recon3D_genes, Reactome_metabolic_genes)
+
+# all overlaps
+count_overlapping_genes(KEGG_metabolic_genes, GO_metabolic_genes, Recon3D_genes, Reactome_metabolic_genes)
+```
+
+#### Keep metabolic genes present in at least two lists
+
+```{r}
+# Based on gene symbols
+metabolic_gene_symbols <- c(
+  extract_gene_symbols(KEGG_metabolic_genes),
+  extract_gene_symbols(GO_metabolic_genes),
+  extract_gene_symbols(Recon3D_genes),
+  extract_gene_symbols(Reactome_metabolic_genes)
+) |>
+  table() |>
+  data.frame() |>
+  dplyr::rename("gene_symbol" = "Var1") |>
+  filter(Freq >= 2)
+dim(metabolic_gene_symbols)
+head(metabolic_gene_symbols)
+
+metabolic_gene_IDs <- c(
+  KEGG_metabolic_genes |> pull(entrez_ID) |> unique(),
+  GO_metabolic_genes |> pull(ENTREZID) |> unique(),
+  Recon3D_genes |> pull(Entrez_ID) |> unique(),
+  Reactome_metabolic_genes |> pull(NCBI_Gene_ID) |> unique()
+) |>
+  table() |>
+  data.frame() |>
+  dplyr::rename("NCBI_Gene_ID" = "Var1") |>
+  filter(Freq >= 2)
+dim(metabolic_gene_IDs)
+head(metabolic_gene_IDs)
+
+# Due to some gene symbol mismatches, I prefer the NCBI gene IDs
+metabolic_genes <- filter(gene_identifier_table, NCBI_Gene_ID %in% metabolic_gene_IDs$NCBI_Gene_ID)
+dim(metabolic_genes)
+head(metabolic_genes)
+# Missing are:
+setdiff(
+  metabolic_gene_IDs$NCBI_Gene_ID,
+  metabolic_genes$NCBI_Gene_ID
+)
+
+write_csv(metabolic_genes, here(output_dir, "metabolic_genes_consensus.csv"))
+```
+
+344967 is a pseudogene: [LOC344967 acyl-CoA thioesterase 7 pseudogene](https://www.ncbi.nlm.nih.gov/gene/344967) 102724197 also refers to a locus/inactive gene: [LOC102724197 inactive glutathione hydrolase 2](https://www.ncbi.nlm.nih.gov/gene/102724197) I decided that it is okay to not include these.
+
+### Filtering steps for differential expression analysis
+
+#### Load the dataset
+
+```{r}
+data_cell_lines <- read_csv(here(
+  data_dir,
+  "RNAseq_raw_counts_celllines.csv"
+))
+
+metadata <- read_csv(here(
+  "manuscript", paste0("Figure1_", datestamp),
+  "Figure1BC.csv"
+)) |>
+  dplyr::rename(group = group.y)
+
+setdiff(colnames(data_cell_lines), metadata$group)
+setdiff(metadata$group, colnames(data_cell_lines))
+
+metadata <- metadata |>
+  filter(group %in% colnames(data_cell_lines))
+
+dim(data_cell_lines)
+dim(metadata)
+```
+
+#### 1. Filter on gene expression (CPM \>= 1 in n\>=5)
+
+Prepare data: keep only genes that have more than 1 cpm in at least 5 cell lines. Amount of million reads per sample is:
+
+```{r}
+data_cell_lines |>
+  dplyr::select(-EnsemblID) |>
+  colSums() |>
+  lapply(function(x) round(x / 1E6, 1)) |>
+  unlist() |>
+  sort()
+```
+
+So let's say at least 10 counts.
+
+-   have count \> 10 in 5 or more cell lines,
+-   have a mean count more than 1.
+
+```{r}
+dim(data_cell_lines)
+data_cell_lines <- column_to_rownames(data_cell_lines, "EnsemblID") |>
+  filter(rowSums(across(everything(), ~ .x > 10)) >= 5) |>
+  filter(rowMeans(across(everything(), ~.x)) > 1)
+dim(data_cell_lines)
+```
+
+#### 2. Differential gene expression analysis
+
+```{r}
+metadata <- metadata |>
+  dplyr::select(group, Factor1, Subtype_4_categories, ProliferationRate) |>
+  filter(group %in% colnames(data_cell_lines)) |>
+  dplyr::rename(Subtype = Subtype_4_categories) |>
+  mutate(Subtype = factor(Subtype, levels = c("Luminal", "HER2pos", "BasalA", "BasalB")))
+dim(metadata)
+head(metadata)
+
+table(metadata$Subtype)
+```
+
+```{r}
+## order of the metadata file has to be the same as the count file. Check if this is true:
+identical(metadata$group, colnames(data_cell_lines))
+
+# Change the order
+data_cell_lines <- dplyr::select(data_cell_lines, all_of(metadata$group))
+stopifnot(identical(metadata$group, colnames(data_cell_lines)))
+
+data_cell_lines[1:5, 1:5]
+```
+
+```{r}
+dim(data_cell_lines)
+dds <- DESeqDataSetFromMatrix(
+  countData = data_cell_lines,
+  colData = metadata,
+  design = ~Factor1
+)
+dds <- DESeq(dds)
+
+print(resultsNames(dds))
+
+get_DEGs <- function(res, ID_name = "EnsemblID") {
+  # Get results summary
+  print(str_glue("Nr of padj < 0.1  = {sum(res$padj < 0.1,  na.rm=TRUE)}"))
+  print(str_glue("Nr of padj < 0.05 = {sum(res$padj < 0.05, na.rm=TRUE)}"))
+  print(str_glue("Nr of padj < 0.01 = {sum(res$padj < 0.01, na.rm=TRUE)}"))
+
+  DEGs <- res |>
+    data.frame() |>
+    arrange(padj) |>
+    rownames_to_column(ID_name) |>
+    left_join(
+      dplyr::select(gene_identifier_table, EnsemblID, NCBI_Gene_ID, gene_symbol),
+      by = ID_name
+    )
+  return(DEGs)
+}
+
+res <- results(dds)
+DEGs_Factor1 <- get_DEGs(res)
+dim(DEGs_Factor1)
+head(DEGs_Factor1)
+
+filter(DEGs_Factor1, padj < 0.1) |> nrow()
+filter(DEGs_Factor1, padj < 0.1, abs(log2FoldChange) > 0) |> nrow()
+filter(DEGs_Factor1, padj < 0.1, log2FoldChange > 0) |> nrow()
+
+write_csv(DEGs_Factor1, here(output_dir, "DEGs_Factor1.csv"))
+```
+
+```{r}
+dim(data_cell_lines)
+dds <- DESeqDataSetFromMatrix(
+  countData = data_cell_lines,
+  colData = metadata,
+  design = ~Subtype
+)
+dds <- DESeq(dds)
+
+print(resultsNames(dds))
+
+# Get results and results summary
+res <- results(dds, name = "Subtype_BasalB_vs_Luminal")
+
+DEGs_Subtype <- get_DEGs(res)
+dim(DEGs_Subtype)
+head(DEGs_Subtype)
+
+filter(DEGs_Subtype, padj < 0.1) |> nrow()
+filter(DEGs_Subtype, padj < 0.1, abs(log2FoldChange) >= 1) |> nrow()
+filter(DEGs_Subtype, padj < 0.1, log2FoldChange >= 1) |> nrow()
+
+write_csv(DEGs_Subtype, here(output_dir, "DEGs_Subtype.csv"))
+```
+
+```{r}
+DEGs <- inner_join(
+  DEGs_Factor1 |>
+    dplyr::select(-lfcSE, -stat, -pvalue),
+  DEGs_Subtype |>
+    dplyr::select(-lfcSE, -stat, -pvalue),
+  by = c("EnsemblID", "NCBI_Gene_ID", "gene_symbol"),
+  suffix = c("_Factor1", "_Subtype")
+) |>
+  relocate(c("EnsemblID", "NCBI_Gene_ID", "gene_symbol"))
+head(DEGs)
+```
+
+#### 3. Filter on metabolic genes
+
+Keep genes if they are in the metabolic gene list and have a FDR \< 0.1 in either analysis, together with an effect size of log2 FC \> 0.5 for basal B:luminal, or coefficient \> 0 for association with factor 1.
+
+```{r}
+DEGs <- DEGs |>
+  mutate(is_metabolic = ifelse(NCBI_Gene_ID %in% metabolic_genes$NCBI_Gene_ID, TRUE, FALSE))
+
+metabolic_DEGs <- DEGs |>
+  filter(is_metabolic == TRUE)
+dim(metabolic_DEGs)
+head(metabolic_DEGs)
+
+print(str_glue("expressed metabolic genes is: {nrow(metabolic_DEGs)}"))
+filter(metabolic_DEGs, padj_Factor1 < 0.1) |> nrow()
+filter(metabolic_DEGs, padj_Subtype < 0.1) |> nrow()
+filter(metabolic_DEGs, padj_Factor1 < 0.1, abs(log2FoldChange_Factor1) > 1) |> nrow()
+filter(metabolic_DEGs, padj_Subtype < 0.1, abs(log2FoldChange_Subtype) > 1) |> nrow()
+
+filter(metabolic_DEGs, padj_Factor1 < 0.1, log2FoldChange_Factor1 > 0) |> nrow()
+filter(metabolic_DEGs, padj_Subtype < 0.1, log2FoldChange_Subtype > 1) |> nrow()
+
+# overlap between the two analyses
+intersect(
+  filter(metabolic_DEGs, padj_Factor1 < 0.1, log2FoldChange_Factor1 > 0) |> pull(gene_symbol),
+  filter(metabolic_DEGs, padj_Subtype < 0.1, log2FoldChange_Subtype > 1) |> pull(gene_symbol)
+) |>
+  length()
+
+# differences between the two analyses
+setdiff(
+  filter(metabolic_DEGs, padj_Factor1 < 0.1, log2FoldChange_Factor1 > 0) |> pull(gene_symbol),
+  filter(metabolic_DEGs, padj_Subtype < 0.1, log2FoldChange_Subtype > 1) |> pull(gene_symbol)
+) |>
+  length()
+setdiff(
+  filter(metabolic_DEGs, padj_Subtype < 0.1, log2FoldChange_Factor1 > 1) |> pull(gene_symbol),
+  filter(metabolic_DEGs, padj_Factor1 < 0.1, log2FoldChange_Subtype > 0) |> pull(gene_symbol)
+) |>
+  length()
+# Keep only genes with either
+DEGs <- DEGs |>
+  mutate(is_metabolic_DEG = (is_metabolic & (
+    (padj_Factor1 < 0.1 & log2FoldChange_Factor1 > 0) |
+      (padj_Subtype < 0.1 & log2FoldChange_Subtype > 1)
+  )
+  ))
+
+metabolic_DEGs <- filter(DEGs, is_metabolic_DEG == TRUE)
+nrow(metabolic_DEGs)
+
+write_csv(metabolic_DEGs, here(output_dir, "metabolic_DEGs.csv"))
+```
+
+#### 4. Filter on patient expression
+
+```{r}
+# Patient tissue
+patient_RNAseq <- read_tsv(here(
+  "data", "brca_tcga_pan_can_atlas_2018",
+  "data_RNA_Seq_v2_expression_median.txt"
+))
+dim(patient_RNAseq)
+patient_RNAseq[1:5, 1:5]
+
+#### Healthy tissue
+normal_RNAseq <- read_tsv(here(
+  "data", "brca_tcga_pan_can_atlas_2018",
+  "data_RNA_Seq_v2_mRNA_median_normals.txt"
+))
+dim(normal_RNAseq)
+normal_RNAseq[1:5, 1:5]
+
+#### Combine
+data_for_DESeq2 <- inner_join(
+  patient_RNAseq |> dplyr::select(-Hugo_Symbol),
+  normal_RNAseq |> dplyr::select(-Hugo_Symbol),
+  by = "Entrez_Gene_Id"
+) |>
+  column_to_rownames("Entrez_Gene_Id")
+dim(data_for_DESeq2)
+data_for_DESeq2[1:5, 1:5]
+
+#### Metadata
+metadata_for_DESeq <- read_tsv(
+  here(
+    "data", "brca_tcga_pan_can_atlas_2018",
+    "data_clinical_patient.txt"
+  ),
+  comment = "#"
+) |>
+  # remove all male
+  filter(SEX != "MALE") |>
+  # Remove all without defined subtype
+  filter(!is.na(SUBTYPE)) |>
+  mutate(
+    normal = str_c(PATIENT_ID, "-11"),
+    patient = str_c(PATIENT_ID, "-01")
+  ) |>
+  dplyr::select(normal, patient, SUBTYPE) |>
+  pivot_longer(
+    cols = c(normal, patient),
+    names_to = "design_group", values_to = "patient_ID"
+  ) |>
+  mutate(SUBTYPE = ifelse(design_group == "normal", "normal tissue", SUBTYPE))
+dim(metadata_for_DESeq)
+head(metadata_for_DESeq)
+tail(metadata_for_DESeq)
+
+# keep only samples also in the RNA seq data
+metadata_for_DESeq <- left_join(
+  data.frame("patient_ID" = colnames(data_for_DESeq2)),
+  metadata_for_DESeq,
+  by = "patient_ID"
+) |>
+  column_to_rownames("patient_ID")
+dim(metadata_for_DESeq)
+
+# Check columns and order
+stopifnot(nrow(metadata_for_DESeq) == ncol(data_for_DESeq2))
+stopifnot(all(rownames(metadata_for_DESeq) == colnames(data_for_DESeq2)))
+```
+
+Count the number of patients with a subtype
+
+```{r}
+metadata_for_DESeq |>
+  group_by(SUBTYPE, design_group) |>
+  summarize(n = n()) |>
+  ungroup() |>
+  pivot_wider(id_cols = SUBTYPE, names_from = design_group, values_from = n)
+```
+
+##### Calculate DEGs for all normal tissue samples vs basal breast cancer
+
+```{r}
+metadata_for_DESeq <- metadata_for_DESeq |>
+  filter(design_group == "normal" | SUBTYPE == "BRCA_Basal")
+dim(metadata_for_DESeq)
+head(metadata_for_DESeq)
+tail(metadata_for_DESeq)
+
+metadata_for_DESeq |>
+  group_by(SUBTYPE, design_group) |>
+  summarize(n = n()) |>
+  ungroup() |>
+  pivot_wider(id_cols = SUBTYPE, names_from = design_group, values_from = n)
+
+data_for_DESeq2 <- dplyr::select(data_for_DESeq2, all_of(rownames(metadata_for_DESeq)))
+# Deseq needs integers.
+data_for_DESeq2 <- round(data_for_DESeq2, digits = 0)
+
+# Check columns and order
+stopifnot(nrow(metadata_for_DESeq) == ncol(data_for_DESeq2))
+stopifnot(all(rownames(metadata_for_DESeq) == colnames(data_for_DESeq2)))
+```
+
+```{r}
+dim(data_for_DESeq2)
+dds <- DESeqDataSetFromMatrix(
+  countData = data_for_DESeq2,
+  colData = metadata_for_DESeq,
+  design = ~design_group
+)
+dds <- DESeq(dds)
+
+# list the coefficients
+print(resultsNames(dds))
+
+# Get results and results summary
+res <- results(dds)
+summary(res)
+
+DEGs_BRCA_Basal <- get_DEGs(res, ID_name = "NCBI_Gene_ID")
+dim(DEGs_BRCA_Basal)
+head(DEGs_BRCA_Basal)
+
+write_csv(DEGs_BRCA_Basal, here(output_dir, "DEGs_BasalBC_vs_all_normal.csv"))
+```
+
+##### Filter metabolic DEGs on patient expression
+
+At least significant elevated expression in patient tissue (log2 FC \> 0, FDR \< 0.1)
+
+```{r}
+genes_DEGs_BRCA_Basal <- DEGs_BRCA_Basal |>
+  filter(log2FoldChange > 0, padj < 0.1) |>
+  pull(NCBI_Gene_ID)
+
+DEGs <- DEGs |>
+  mutate(is_elevated_patient = (NCBI_Gene_ID %in% genes_DEGs_BRCA_Basal)) |>
+  mutate(is_metabolic_target = (is_elevated_patient & is_metabolic_DEG))
+
+metabolic_targets <- DEGs |>
+  filter(is_metabolic_target == TRUE)
+dim(metabolic_targets)
+head(metabolic_targets)
+```
+
+#### 5. Include information on metabolite subsystems
+
+Using the full Reactome list, because these can be at higher levels in the hierarchy of Reactome than previously used pathways.
+
+-   Synthesis of DNA: R-HSA-69239
+-   Proteasome: R-HSA-68819
+-   Collagen formation: R-HSA-1474290
+
+```{r}
+Proteasome_components <- read_csv(here(
+  data_dir,
+  "Proteasome_components_R-HSA-68819.csv"
+))
+head(Proteasome_components)
+
+# Check if it is complete
+any(is.na(Proteasome_components$EnsemblID))
+
+Proteasome_components <- Proteasome_components |>
+  dplyr::rename(Source_ID = EnsemblID) |>
+  dplyr::select(Source_ID) |>
+  mutate(
+    "Reactome_ID" = "R-HSA-68819",
+    "Event_Name" = "Proteasome"
+  )
+head(Proteasome_components)
+```
+
+```{r}
+Ensembl2Reactome_All_Levels <- read_tsv(
+  here(
+    data_dir,
+    "Ensembl2Reactome_All_Levels.txt"
+  ),
+  col_names = c("Source_ID", "Reactome_ID", "URL", "Event_Name", "Evidence_Code", "Species")
+) |>
+  filter(Species == "Homo sapiens") |>
+  dplyr::select(Source_ID, Reactome_ID, Event_Name) |>
+  filter(str_detect(Source_ID, "ENSG")) |>
+  # Add the proteasome
+  bind_rows(
+    Proteasome_components
+  )
+
+processes_of_interest <- c(
+  "R-HSA-1474290", # Collagen formation
+  "R-HSA-1630316", # Glycosaminoglycan metabolism
+  "R-HSA-15869", # Metabolism of nucleotides
+  "R-HSA-71291", # Metabolism of amino acids and derivatives
+  "R-HSA-71387", # Metabolism of carbohydrates
+  "R-HSA-556833", # Metabolism of lipids
+  "R-HSA-72766", # Translation
+  "R-HSA-8953854", # Metabolism of RNA
+  "R-HSA-68819", # Proteasome
+  "R-HSA-69239", # Synthesis of DNA
+  "R-HSA-1428517", # The citric acid (TCA) cycle and respiratory electron transport,
+  "R-HSA-382551" # Transport of small molecules
+)
+
+Reactome_selection <- Ensembl2Reactome_All_Levels |>
+  filter(Reactome_ID %in% processes_of_interest)
+
+# Also get a vector with Reactome pathway names, or stop if pathways are missing
+if (length(setdiff(processes_of_interest, unique(Reactome_selection$Reactome_ID))) == 0) {
+  processes_of_interest <- dplyr::select(Reactome_selection, Reactome_ID, Event_Name) |>
+    distinct()
+} else {
+  stop()
+}
+
+table(Reactome_selection$Event_Name)
+head(Reactome_selection)
+
+Reactome_selection <- Reactome_selection |>
+  dplyr::select(Source_ID, Event_Name) |>
+  distinct() |>
+  mutate(value = 1) |>
+  pivot_wider(
+    id_cols = Source_ID, names_from = Event_Name,
+    values_from = value, values_fill = 0
+  ) |>
+  dplyr::rename(EnsemblID = Source_ID)
+
+metabolic_targets <- metabolic_targets |>
+  left_join(Reactome_selection,
+    by = "EnsemblID"
+  ) |>
+  mutate(across(colnames(Reactome_selection), ~ replace_na(., 0)))
+
+dim(metabolic_targets)
+head(metabolic_targets)
+
+metabolic_targets <- metabolic_targets |>
+  rowwise() |>
+  mutate(in_pathway = sum(across(all_of(processes_of_interest$Event_Name))))
+```
+
+#### 6. Select genes for a screen
+
+We chose this manually to represent multiple metabolic processes.
+
+```{r}
+selection <- c(
+  "NUDT5", "PTDSS1", "PTGES2", "PTGES2", "COQ3", "DLAT", "DPAGT1",
+  "GCDH", "GCDH", "BCAT1", "AKR1B1", "PIK3CD", "GSTP1", "AGPAT4", "SLC7A11", "UPP1",
+  "CHST3", "LDHB", "ADCY7", "SMOX", "HACD1", "HPSE", "B3GNT5", "SLC16A3", "MOCOS",
+  "EXT1", "ABCC4", "ODC1", "PSAT1", "TYMS", "TYMS", "GLS", "GALNT2", "FADS1",
+  "SOAT1", "GSTO1", "MTMR2", "SLC7A1", "MTHFD1L", "ADA", "TRDMT1", "TRDMT1",
+  "PLOD2", "PLOD2", "HPRT1", "ALDH1B1", "HMOX1", "LDHA", "LDHA", "LDHA", "TXNRD1",
+  "SLC20A1", "CTPS1", "EXTL3", "CPOX", "PHGDH", "PFKP", "ADI1", "LBR", "GCLM",
+  "MGAT2", "AGPAT5", "SLC2A6", "FXN", "FXN", "NAMPT", "NAMPT", "ATP1B3", "POFUT1",
+  "EXT2", "CERK", "CERK", "CHSY1", "AMPD2", "DGUOK", "HMBS", "CHST14", "PTS", "NME7",
+  "ENO1", "ENO1", "GART", "UAP1", "B4GALT5", "DTYMK", "AASDHPPT", "PSPH", "ARSB", "RPIA"
+)
+
+setdiff(selection, metabolic_DEGs$gene_symbol)
+old_selection <- setdiff(selection, metabolic_targets$gene_symbol)
+old_selection
+
+intersect(selection, metabolic_targets$gene_symbol) |>
+  length()
+
+metabolic_targets <- metabolic_targets |>
+  mutate(
+    selection_siRNA = ifelse(gene_symbol %in% selection, "selected", "not selected")
+  ) |>
+  relocate(selection_siRNA, .after = "padj_Subtype")
+
+DEGs <- DEGs |>
+  mutate(selection_siRNA = ((gene_symbol %in% selection) & is_metabolic_target))
+
+write_csv(metabolic_targets, here(output_dir, "metabolic_targets.csv"))
+write_csv(DEGs, here(output_dir, "DEGs.csv"))
+```
+
+## Conclusion
+
+Data for Figure 3 is ready.
+
+## Additional information
+
+### Kegg version
+
+```{r}
+KEGGREST::keggInfo("kegg")
+KEGGREST::keggInfo("hsa")
+```
+
+### GO database version
+
+```{r}
+org.Hs.eg.db
+```
+
+### Session info
+
+```{r}
+sessionInfo()
+```

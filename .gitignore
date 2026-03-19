@@ -3,10 +3,8 @@
 .RData
 .Ruserdata
 
-# Ignore data and manuscript folder
-#data/*
+# Ignore manuscript folder
 manuscript/*
-manuscript_biology/*
 *.html
 
 # Renv
@@ -22,7 +20,7 @@ renv/staging/*
 # and metadata on molecular subtypes in data_clinical_patient.txt
 # Origin is https://www.cbioportal.org/datasets Breast Invasive Carcinoma (TCGA, PanCancer Atlas) with reference TCGA, Cell 2018 downloaded on 8-4-2021
 
-*Ensmbl2Reactome.txt
+*Ensembl2Reactome.txt
 *Ensembl2Reactome_All_Levels.txt
 # The source is:
 # Reactome, from https://reactome.org/download-data downloaded on 20-01-2025

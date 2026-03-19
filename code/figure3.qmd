@@ -1,0 +1,347 @@
+---
+title: "Figure3"
+author: "Hanneke Leegwater"
+date: "`r Sys.Date()`"
+format: 
+  html:
+    self-contained: true
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    df-print: kable
+---
+
+## Template Used
+
+LACDR-ISA - Assay (General) v1.0.0
+
+## Title
+
+`r rmarkdown::metadata$title`
+
+## Date (dd-MM-yyyy)
+
+`r format(Sys.time(), format = "%d-%m-%Y")`
+
+## Description or Purpose
+
+Build Figure 3
+
+### Background
+
+### Data sources
+
+-   Differentially expressed metabolic genes and the selection for the screen
+
+### Analysis plan
+
+Half of the figure is the drawio workflow. Here, I add the volcano plots.
+
+## Results
+
+### Preparations
+
+#### Load R libraries
+
+```{r}
+library(tidyverse)
+library(here)
+library(cowplot)
+library(magick)
+library(ggrepel)
+```
+
+#### Visualization settings for the report
+
+```{r}
+options(digits = 3) # visualizations of tables
+theme_set(theme_classic())
+```
+
+#### Custom functions
+
+```{r}
+source(here("code/functions/helpers.R"))
+source(here("code/functions/figure_helpers.R"))
+source(here("code/functions/heatmap_helpers.R"))
+source(here("code/functions/color_scales.R"))
+```
+
+#### Set input and output directories
+
+Show base path to the project that is used in the analysis.
+
+```{r}
+here()
+```
+
+Set output data directory and create if it does not exist.
+
+```{r}
+datestamp <- get_datestamp()
+output_dir <- set_output_dir(here("manuscript", str_glue("Figure3_{datestamp}")))
+```
+
+### Figure 3A
+
+This is a workflow drawing
+
+```{r}
+figure_3a <- here("docs/Figure_3A.drawio.svg")
+figure_3a <- ggdraw() +
+  draw_image(figure_3a)
+figure_3a
+```
+
+### Figure 3BC
+
+```{r}
+metabolic_DEGs <- read_csv(here(output_dir, "metabolic_DEGs.csv"))
+metabolic_targets <- read_csv(here(output_dir, "metabolic_targets.csv"))
+DEGs <- read_csv(here(output_dir, "DEGs.csv"))
+```
+
+```{r}
+set_colors <- function(data_MA_plot, color_scale) {
+  data_MA_plot <- data_MA_plot |>
+    # Sort to put selection on top
+    mutate(to_color = factor(to_color,
+      levels = names(color_scale)
+    )) |>
+    arrange(to_color)
+
+  # Sort to keep this order of selected genes for the plot
+  data_MA_plot <- data_MA_plot |>
+    mutate(gene_symbol = factor(gene_symbol, levels = data_MA_plot$gene_symbol))
+  return(data_MA_plot)
+}
+get_top_hits <- function(data_MA_plot, selection = "baseMean") {
+  # label top selected genes
+  top_hits_FC <- data_MA_plot |>
+    filter(selection_siRNA & padj < 0.1) |>
+    arrange(desc(log2FoldChange)) |>
+    head(10)
+  top_hits_baseMean <- data_MA_plot |>
+    filter(selection_siRNA & padj < 0.1) |>
+    arrange(desc(baseMean)) |>
+    head(10)
+  top_hits_padj <- data_MA_plot |>
+    filter(selection_siRNA & padj < 0.1) |>
+    arrange(padj) |>
+    head(10)
+  if (selection == "baseMean") {
+    return(bind_rows(top_hits_FC, top_hits_baseMean) |> distinct())
+  } else {
+    return(bind_rows(top_hits_FC, top_hits_padj) |> distinct())
+  }
+}
+```
+
+
+```{r}
+volcano_plot <- function(df, x_name, to_label, color_scale, x_max = NA) {
+  if (is.na(x_max)) {
+    # symmetric x axis
+    x_max <- max(abs(df$log2FoldChange), na.rm = TRUE)
+    df <- mutate(df, shape = "")
+  } else {
+    df <- mutate(df,
+      shape = ifelse(log2FoldChange > x_max, "> max", ""),
+      log2FoldChange = ifelse(log2FoldChange > x_max, x_max, log2FoldChange)
+    )
+  }
+  # label top 10 selected genes
+
+  p <- ggplot(df, aes(x = log2FoldChange, y = -log10(padj))) +
+    geom_point(aes(color = to_color, shape = shape)) +
+    geom_text_repel(
+      data = to_label,
+      aes(
+        x = log2FoldChange, y = -log10(padj),
+        label = gene_symbol
+      )
+    ) +
+    geom_vline(xintercept = 0, color = "grey", linetype = "dashed") +
+    scale_x_continuous(limits = c(-x_max, x_max), name = x_name) +
+    scale_color_manual(values = color_scale, na.value = "grey80") +
+    theme(legend.position = "bottom") +
+    labs(color = NULL, y = "-log10(FDR)")
+  return(p)
+}
+MA_plot <- function(df, y_name, to_label, color_scale, y_max = NA) {
+  if (is.na(y_max)) {
+    # symmetric y axis
+    y_max <- max(abs(df$log2FoldChange), na.rm = TRUE)
+    df <- mutate(df, shape = "")
+  } else {
+    df <- mutate(df,
+      shape = ifelse(log2FoldChange > y_max, "> max", ""),
+      log2FoldChange = ifelse(log2FoldChange > y_max, y_max, log2FoldChange)
+    )
+  }
+  p <- ggplot(df, aes(x = log2(baseMean), y = log2FoldChange)) +
+    geom_point(aes(color = to_color, shape = shape)) +
+    geom_text_repel(
+      data = to_label,
+      aes(
+        x = log2(baseMean), y = log2FoldChange,
+        label = gene_symbol
+      )
+    ) +
+    geom_hline(yintercept = 0, color = "grey", linetype = "dashed") +
+    scale_y_continuous(limits = c(-y_max, y_max), name = y_name) +
+    scale_color_manual(values = color_scale, na.value = "grey80") +
+    theme(legend.position = "bottom") +
+    labs(x = "log2(mean gene expression)", color = NULL)
+  return(p)
+}
+```
+
+```{r fig.height=6/2.54, fig.width=6/2.54}
+data_MA_plot <- DEGs |>
+  # Keep metabolic genes
+  filter(is_metabolic) |>
+  # Specify significant metabolic genes
+  mutate(is_significant = padj_Factor1 < 0.1) |>
+  mutate(to_color = case_when(
+    selection_siRNA ~ "selected",
+    !is_significant ~ "FDR > 0.1",
+    is_significant & !is_elevated_patient ~ "FDR < 0.1, not elevated in patients",
+    is_significant & is_elevated_patient ~ "FDR < 0.1"
+  )) |>
+  set_colors(color_scale = color_scale_FDR_factor) |>
+  dplyr::rename(
+    log2FoldChange = log2FoldChange_Factor1,
+    padj = padj_Factor1,
+    baseMean = baseMean_Factor1
+  )
+
+top_hits <- get_top_hits(data_MA_plot, selection = "baseMean")
+top_hits$gene_symbol
+
+figure_3b <- data_MA_plot |>
+  MA_plot(
+    y_name = "coefficient Factor 1",
+    to_label = top_hits,
+    color_scale = color_scale_FDR_factor
+  )
+figure_3b
+
+top_hits <- get_top_hits(data_MA_plot, selection = "padj")
+top_hits$gene_symbol
+
+figure_3c <- data_MA_plot |>
+  volcano_plot(
+    x_name = "coefficient Factor 1",
+    to_label = top_hits,
+    color_scale = color_scale_FDR_factor
+  )
+figure_3c
+```
+
+```{r}
+factor1_legend <- get_legend(figure_3b, position = "bottom", n_row = 1)
+ggdraw(factor1_legend)
+```
+
+### Figure 3DE
+
+```{r fig.height=6/2.54, fig.width=6/2.54}
+data_MA_plot <- DEGs |>
+  # Keep metabolic genes
+  filter(is_metabolic) |>
+  # Specify significant metabolic genes
+  mutate(is_significant = (padj_Subtype < 0.1 & abs(log2FoldChange_Subtype) > 1)) |>
+  mutate(to_color = case_when(
+    selection_siRNA ~ "selected",
+    !is_significant ~ "FDR > 0.1",
+    is_significant & !is_elevated_patient ~ "FDR < 0.1, abs(log2FC) > 1, not elevated in patients",
+    is_significant & is_elevated_patient ~ "FDR < 0.1, abs(log2FC) > 1"
+  )) |>
+  set_colors(color_scale = color_scale_FDR_subtype) |>
+  dplyr::rename(
+    log2FoldChange = log2FoldChange_Subtype,
+    padj = padj_Subtype,
+    baseMean = baseMean_Subtype
+  )
+
+top_hits <- get_top_hits(data_MA_plot, selection = "baseMean")
+top_hits$gene_symbol
+
+figure_3d <- data_MA_plot |>
+  MA_plot(
+    y_name = "log2 FC (Basal B/luminal)",
+    to_label = top_hits, color_scale = color_scale_FDR_subtype, y_max = 10
+  ) +
+  theme(legend.position = "bottom")
+figure_3d
+
+top_hits <- get_top_hits(data_MA_plot, selection = "padj")
+top_hits$gene_symbol
+
+figure_3e <- data_MA_plot |>
+  volcano_plot(x_name = "log2 FC (Basal B/luminal)", to_label = top_hits, color_scale = color_scale_FDR_subtype, x_max = 10) +
+  theme(legend.position = "bottom")
+figure_3e
+```
+
+
+```{r}
+subtype_legend <- get_legend(figure_3d, position = "bottom", n_row = 1)
+ggdraw(subtype_legend)
+```
+
+### Figure 3
+
+```{r fig.height=12/2.54, fig.width=12/2.54}
+figure_3bcde <- plot_grid(
+  plot_grid(
+    figure_3b + theme(legend.position = "none"),
+    figure_3c + theme(legend.position = "none"),
+    labels = LETTERS[2:3],
+    nrow = 1
+  ),
+  factor1_legend,
+  plot_grid(
+    figure_3d + theme(legend.position = "none"),
+    figure_3e + theme(legend.position = "none"),
+    labels = LETTERS[4:5],
+    nrow = 1
+  ),
+  subtype_legend,
+  ncol = 1,
+  rel_heights = c(1, 0.1, 1, 0.1)
+)
+figure_3bcde
+```
+
+
+```{r fig.height=12/2.54, fig.width=18/2.54}
+figure_3 <- plot_grid(
+  plot_grid(ggplot(), figure_3a, ncol = 1, rel_heights = c(0.5, 9), labels = LETTERS[1]),
+  figure_3bcde,
+  nrow = 1,
+  rel_widths = c(1.5, 2)
+)
+figure_3
+```
+
+```{r}
+(output_file <- here(output_dir, "Figure_3bcde.png"))
+save_plot(output_file, figure_3bcde, base_height = 2 / 3 * page_height, base_width = 2 / 3 * page_height)
+
+(output_file <- here(output_dir, "Figure_3.png"))
+save_plot(output_file, figure_3, base_height = 2 / 3 * page_height, base_width = page_width)
+```
+
+## Conclusion
+
+Figure 3 is finished.
+
+## Additional information
+
+### Session info
+
+```{r}
+sessionInfo()
+```
