@@ -1,0 +1,374 @@
+---
+title: "Figure2"
+author: "Hanneke Leegwater"
+date: "`r Sys.Date()`"
+format: 
+  html:
+    self-contained: true
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    df-print: kable
+---
+
+## Template Used
+
+LACDR-ISA - Assay (General) v1.0.0
+
+## Title
+
+`r rmarkdown::metadata$title`
+
+## Date (dd-MM-yyyy)
+
+`r format(Sys.time(), format = "%d-%m-%Y")`
+
+## Description or Purpose
+
+Build Figure 2
+
+### Background
+
+### Data sources
+
+-   Loadings and weights for Factor 1 from Figure 1
+-   All transporters associated with top hits from Factor 1 from Recon3D
+-   All export transporters from Recon3D
+-   All transport-related genes from Reactome
+
+### Analysis plan
+
+-   A: all metabolite rates of interest without scaling/with zero as zero scaled to the max
+-   B: transporters of interest and factor 1
+-   C: correlation of all transporters reactome & link to factor 1 and 2
+-   D: correlation of all transporters Recon3D & link to factor 1 and 2
+
+## Results
+
+### Preparations
+
+#### Load R libraries
+
+```{r}
+library(tidyverse)
+library(here)
+library(cowplot)
+library(circlize)
+library(ComplexHeatmap)
+```
+
+#### Visualization settings for the report
+
+```{r}
+options(digits = 3) # visualizations of tables
+theme_set(theme_classic())
+```
+
+#### Custom functions
+
+```{r}
+source(here("code/functions/helpers.R"))
+source(here("code/functions/figure_helpers.R"))
+source(here("code/functions/heatmap_helpers.R"))
+source(here("code/functions/color_scales.R"))
+```
+
+#### Set input and output directories
+
+Show base path to the project that is used in the analysis.
+
+```{r}
+here()
+```
+
+Set output data directory and create if it does not exist.
+
+```{r}
+datestamp <- get_datestamp()
+output_dir <- set_output_dir(here("manuscript", str_glue("Figure2_{datestamp}")))
+```
+
+### Figure 2A
+
+-   A: all metabolite rates of interest without scaling/with zero as zero scaled to the max
+
+```{r fig.height=8, fig.width=8}
+metabolite_rates <- read_csv(here(output_dir, "Figure2A.csv"))
+
+# sort for plot order by factor 1 weight
+metabolites_of_interest <- select(metabolite_rates, metabolite, weight_Factor1) |>
+  distinct() |>
+  filter(!is.na(weight_Factor1)) |>
+  arrange(desc(abs(weight_Factor1)))
+
+metabolite_rates |>
+  mutate(metabolite = factor(metabolite,
+    levels = metabolites_of_interest$metabolite
+  )) |>
+  filter(metabolite %in% metabolites_of_interest$metabolite) |>
+  ggplot(aes(x = Factor1, y = scaled_minmax_rate)) +
+  geom_point() +
+  geom_hline(yintercept = 0) +
+  facet_wrap(~metabolite, scales = "free_y")
+```
+
+Prepare the data for plotting.
+
+```{r}
+metabolite_rates_heatmap <- metabolite_rates |>
+  filter(metabolite %in% metabolites_of_interest$metabolite) |>
+  select(metabolite, cell_line, scaled_minmax_rate) |>
+  pivot_wider(id_cols = metabolite, names_from = cell_line, values_from = scaled_minmax_rate) |>
+  column_to_rownames("metabolite")
+
+metadata_cells <- metabolite_rates |>
+  select(
+    cell_line,
+    Morphology, Subtype_4_categories, EMT_score, ProliferationRate,
+    Factor1, Factor2
+  ) |>
+  distinct() |>
+  rename(Subtype = Subtype_4_categories) |>
+  column_to_rownames("cell_line")
+
+# Check that column order is identical
+stopifnot(rownames(metadata_cells) == colnames(metabolite_rates_heatmap))
+```
+
+Define metadata colors of the factors
+
+```{r}
+ann_colors <- list(
+  "Morphology" = color_legend_cell_lines[unique(metadata_cells$Morphology)] |> unlist(),
+  "Subtype" = color_legend_Subtype,
+  "EMT score" = add_numeric_colors(
+    metadata_cells$EMT_score,
+    color_legend_cell_lines$`Epithelial-like`,
+    color_legend_cell_lines$`Mesenchymal-like`
+  ),
+  "Proliferation" = add_numeric_colors(metadata_cells$ProliferationRate, "white", "black"),
+  "Factor 1" = add_numeric_colors(metadata_cells$Factor1, "white", "black"),
+  "Factor 2" = add_numeric_colors(metadata_cells$Factor2, "white", "black")
+)
+```
+
+Define the column annotation and plot the heatmap.
+
+```{r fig.height=6, fig.width=8}
+column_annotation <- columnAnnotation(
+  "Subtype" = metadata_cells$Subtype,
+  "Proliferation" = metadata_cells$ProliferationRate,
+  "Factor 1" = metadata_cells$Factor1,
+  col = ann_colors
+)
+
+figure_2a <- metabolite_rates_heatmap |>
+  Heatmap(
+    top_annotation = column_annotation,
+    col = color_heatmap_cor,
+    heatmap_legend_param = list(
+      title = "scaled metabolite rate",
+      direction = "horizontal"
+    ),
+    row_dend_width = unit(4, "mm"),
+    column_dend_height = unit(4, "mm")
+  ) |>
+  draw(
+    heatmap_legend_side = "bottom"
+  )
+figure_2a
+```
+
+### Figure 2B
+
+-   B: transporters of interest and factor 1
+
+```{r fig.height=6, fig.width=4}
+expression_factor1_hits <- read_csv(here(output_dir, "Figure2B.csv")) |>
+  filter(!is.na(Factor1))
+transporter_order <- unique(expression_factor1_hits$gene_symbol)
+expression_factor1_hits <- expression_factor1_hits |>
+  mutate(gene_symbol = factor(gene_symbol, levels = transporter_order))
+length(unique(expression_factor1_hits$gene_symbol))
+
+plot_transporters <- function(df, x_lab) {
+  p <- df |>
+    ggplot(aes(x = .data[[x_lab]], y = log2_expression, color = Subtype_4_categories)) +
+    geom_point(size = 1) +
+    facet_wrap(~gene_symbol, scales = "free_y", nrow = 3) +
+    # theme(legend.position = "bottom") +
+    scale_color_manual(values = color_legend_Subtype) +
+    labs(color = "Subtype", x = x_lab, y = expression(log[2] ~ gene ~ expression)) +
+    theme(
+      legend.position = c(0.75, 0.2),
+      legend.justification = "left"
+    )
+  return(p)
+}
+
+# Plot by factor
+figure_2b <- plot_transporters(expression_factor1_hits, "Factor1")
+figure_2b
+
+# Plot by subtype
+plot_transporters(expression_factor1_hits, "Subtype_4_categories")
+
+# Plot by proliferation
+plot_transporters(expression_factor1_hits, "ProliferationRate")
+```
+
+### Supplementary Figure
+
+Transporters of interest in patient tissue
+
+```{r fig.height=8, fig.width=6}
+transporter_data_pat <- read_csv(here(output_dir, "Figure2-Supplementary_Fig.csv"))
+
+suppl_fig_1 <- transporter_data_pat |>
+  mutate(SUBTYPE = str_remove(SUBTYPE, "BRCA_")) |>
+  # Sort by same order as cell line data
+  mutate(Hugo_Symbol = factor(Hugo_Symbol, levels = transporter_order)) |>
+  ggplot(aes(x = SUBTYPE, y = log2_gene_expression, fill = design_group)) +
+  geom_violin(draw_quantiles = 0.5) +
+  facet_wrap(~Hugo_Symbol, scales = "free_y", ncol = 2) +
+  # theme(legend.position = "bottom") +
+  scale_fill_manual(values = c(
+    "normal" = "grey70",
+    "patient" = "grey40"
+  )) +
+  labs(
+    fill = "Tissue type", x = NULL,
+    y = expression(log[2] ~ gene ~ expression)
+  ) +
+  scale_x_discrete(guide = guide_axis(angle = 90)) +
+  theme(
+    legend.position = c(0.75, 0.2),
+    legend.justification = "left"
+  )
+
+suppl_fig_1
+
+save_plot(here(output_dir, "Supplementary_figure.png"), suppl_fig_1)
+```
+
+### Figure 2C
+
+-   C: correlation of all transporters Recon3D & link to factor 2
+
+```{r}
+t_transporters_pearson_cor <- read_csv(here(output_dir, "Figure2C.csv")) |>
+  column_to_rownames("gene_symbol")
+
+gene_EMT_cor <- read_csv(here(output_dir, "Figure2C_correlations.csv")) |>
+  column_to_rownames("gene_symbol")
+
+stopifnot(all(rownames(t_transporters_pearson_cor) == rownames(gene_EMT_cor)))
+
+column_annotation <- columnAnnotation(
+  df = select(gene_EMT_cor, ProliferationRate, EMT_score),
+  col = list(
+    ProliferationRate = purple_white_black,
+    EMT_score = purple_white_black
+  ),
+  annotation_label = gt_render(c(
+    "r<sub>s</sub> proliferation",
+    "r<sub>s</sub> EMT score"
+  )),
+  show_legend = c(FALSE, FALSE)
+)
+
+(figure_2c <- t_transporters_pearson_cor |>
+  Heatmap(
+    col = color_heatmap_cor,
+    top_annotation = column_annotation,
+    show_row_names = FALSE,
+    show_column_names = FALSE,
+    heatmap_legend_param = list(
+      title = "r"
+    )
+    # proliferation label fell off the figure.
+    # Increase padding on the right to keep the labels:
+  ) |> 
+    draw(padding = unit(c(0, 0, 0, 5), "mm")))
+figure_2c
+```
+
+### Figure 2D
+
+-   D: correlation of all transporters Reactome & link to factor 2
+
+```{r}
+t_transporters_pearson_cor <- read_csv(here(output_dir, "Figure2D.csv")) |>
+  column_to_rownames("gene_symbol")
+gene_EMT_cor <- read_csv(here(output_dir, "Figure2D_correlations.csv")) |>
+  column_to_rownames("gene_symbol")
+
+stopifnot(all(rownames(t_transporters_pearson_cor) == rownames(gene_EMT_cor)))
+
+column_annotation <- columnAnnotation(
+  df = select(gene_EMT_cor, ProliferationRate, EMT_score),
+  col = list(
+    ProliferationRate = purple_white_black,
+    EMT_score = purple_white_black
+  ),
+  annotation_label = gt_render(c(
+    "r<sub>s</sub> proliferation",
+    "r<sub>s</sub> EMT score"
+  )),
+  show_legend = c(TRUE, FALSE),
+  annotation_legend_param = list(
+    title = gt_render("r<sub>s</sub>")
+  )
+)
+
+figure_2d <- t_transporters_pearson_cor |>
+  Heatmap(
+    col = color_heatmap_cor,
+    top_annotation = column_annotation,
+    show_row_names = FALSE,
+    show_column_names = FALSE,
+    heatmap_legend_param = list(
+      title = "r"
+    )
+  )
+figure_2d
+```
+
+### Figure 2
+
+```{r fig.height=18/2.54, fig.width=18/2.54}
+figure_2 <- plot_grid(
+  plot_grid(
+    heatmap_in_grid(figure_2a),
+    figure_2b,
+    rel_widths = c(2, 1),
+    labels = LETTERS[1:2]
+  ),
+  plot_grid(
+    heatmap_in_grid(figure_2c),
+    heatmap_in_grid(figure_2d),
+    rel_widths = c(1, 1.1),
+    labels = LETTERS[3:4]
+  ),
+  nrow = 2,
+  rel_heights = c(1.1, 1)
+)
+figure_2
+```
+
+```{r}
+(output_file <- here(output_dir, "Figure_2.png"))
+save_plot(output_file, figure_2, base_height = page_height, base_width = page_width)
+```
+
+## Conclusion
+
+Figure 2 is ready.
+
+## Additional information
+
+### Session info
+
+```{r}
+sessionInfo()
+```

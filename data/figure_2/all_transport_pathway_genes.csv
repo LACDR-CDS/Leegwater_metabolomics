@@ -1,0 +1,870 @@
+Source_ID,Reactome_ID,URL,Event_Name,Evidence_Code,Species
+ENSG00000001461,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000001626,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000003989,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000004809,R-HSA-549127,https://reactome.org/PathwayBrowser/#/R-HSA-549127,Organic cation transport,TAS,Homo sapiens
+ENSG00000004846,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000004939,R-HSA-1237044,https://reactome.org/PathwayBrowser/#/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,TAS,Homo sapiens
+ENSG00000004939,R-HSA-1247673,https://reactome.org/PathwayBrowser/#/R-HSA-1247673,Erythrocytes take up oxygen and release carbon dioxide,TAS,Homo sapiens
+ENSG00000004939,R-HSA-425381,https://reactome.org/PathwayBrowser/#/R-HSA-425381,Bicarbonate transporters,TAS,Homo sapiens
+ENSG00000005022,R-HSA-83936,https://reactome.org/PathwayBrowser/#/R-HSA-83936,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane,TAS,Homo sapiens
+ENSG00000005059,R-HSA-8949215,https://reactome.org/PathwayBrowser/#/R-HSA-8949215,Mitochondrial calcium ion transport,TAS,Homo sapiens
+ENSG00000005059,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000005249,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000005471,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000006125,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000006125,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000007216,R-HSA-433137,https://reactome.org/PathwayBrowser/#/R-HSA-433137,"Sodium-coupled sulphate, di- and tri-carboxylate transporters",TAS,Homo sapiens
+ENSG00000007944,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000008018,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000010379,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000010704,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000011021,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000011083,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000012174,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,IEA,Homo sapiens
+ENSG00000013275,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000016490,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000016602,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000017260,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000017483,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000018280,R-HSA-425410,https://reactome.org/PathwayBrowser/#/R-HSA-425410,Metal ion SLC transporters,TAS,Homo sapiens
+ENSG00000018625,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000021488,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000023839,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000025434,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000033627,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000033627,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000033867,R-HSA-425381,https://reactome.org/PathwayBrowser/#/R-HSA-425381,Bicarbonate transporters,TAS,Homo sapiens
+ENSG00000034693,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000036565,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000039987,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000040487,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000040531,R-HSA-425393,https://reactome.org/PathwayBrowser/#/R-HSA-425393,Transport of inorganic cations/anions and amino acids/oligopeptides,TAS,Homo sapiens
+ENSG00000040531,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000041357,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000042753,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000042753,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000047249,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000047249,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000047457,R-HSA-425410,https://reactome.org/PathwayBrowser/#/R-HSA-425410,Metal ion SLC transporters,TAS,Homo sapiens
+ENSG00000047457,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000047617,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000049759,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000050438,R-HSA-425381,https://reactome.org/PathwayBrowser/#/R-HSA-425381,Bicarbonate transporters,TAS,Homo sapiens
+ENSG00000054793,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000055130,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000055732,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000057252,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000058063,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000058404,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000058668,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000059804,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000060237,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000060566,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,IEA,Homo sapiens
+ENSG00000064270,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000064651,R-HSA-426117,https://reactome.org/PathwayBrowser/#/R-HSA-426117,Cation-coupled Chloride cotransporters,TAS,Homo sapiens
+ENSG00000064687,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000065615,R-HSA-1237044,https://reactome.org/PathwayBrowser/#/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,TAS,Homo sapiens
+ENSG00000065923,R-HSA-425986,https://reactome.org/PathwayBrowser/#/R-HSA-425986,Sodium/Proton exchangers,TAS,Homo sapiens
+ENSG00000066230,R-HSA-425986,https://reactome.org/PathwayBrowser/#/R-HSA-425986,Sodium/Proton exchangers,TAS,Homo sapiens
+ENSG00000067842,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000068650,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000068912,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000069018,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000069431,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000069849,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000069966,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000070214,R-HSA-425366,https://reactome.org/PathwayBrowser/#/R-HSA-425366,"Transport of bile salts and organic acids, metal ions and amine compounds",TAS,Homo sapiens
+ENSG00000070808,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000070915,R-HSA-426117,https://reactome.org/PathwayBrowser/#/R-HSA-426117,Cation-coupled Chloride cotransporters,TAS,Homo sapiens
+ENSG00000070961,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000070985,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000071537,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000071553,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000071553,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000071967,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000072041,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000072041,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000072062,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000072062,R-HSA-8963896,https://reactome.org/PathwayBrowser/#/R-HSA-8963896,HDL assembly,TAS,Homo sapiens
+ENSG00000072182,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000072274,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000072315,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000072849,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000073060,R-HSA-8964011,https://reactome.org/PathwayBrowser/#/R-HSA-8964011,HDL clearance,TAS,Homo sapiens
+ENSG00000073464,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000074370,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000074621,R-HSA-425561,https://reactome.org/PathwayBrowser/#/R-HSA-425561,Sodium/Calcium exchangers,TAS,Homo sapiens
+ENSG00000074803,R-HSA-426117,https://reactome.org/PathwayBrowser/#/R-HSA-426117,Cation-coupled Chloride cotransporters,TAS,Homo sapiens
+ENSG00000074855,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000075142,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000075142,R-HSA-425561,https://reactome.org/PathwayBrowser/#/R-HSA-425561,Sodium/Calcium exchangers,TAS,Homo sapiens
+ENSG00000075142,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000075340,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000075673,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000076351,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000078295,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000078369,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000078668,R-HSA-8949215,https://reactome.org/PathwayBrowser/#/R-HSA-8949215,Mitochondrial calcium ion transport,IEA,Homo sapiens
+ENSG00000079215,R-HSA-425393,https://reactome.org/PathwayBrowser/#/R-HSA-425393,Transport of inorganic cations/anions and amino acids/oligopeptides,TAS,Homo sapiens
+ENSG00000080493,R-HSA-425381,https://reactome.org/PathwayBrowser/#/R-HSA-425381,Bicarbonate transporters,TAS,Homo sapiens
+ENSG00000081087,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000081800,R-HSA-433137,https://reactome.org/PathwayBrowser/#/R-HSA-433137,"Sodium-coupled sulphate, di- and tri-carboxylate transporters",TAS,Homo sapiens
+ENSG00000081923,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000083067,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000084453,R-HSA-879518,https://reactome.org/PathwayBrowser/#/R-HSA-879518,Transport of organic anions,TAS,Homo sapiens
+ENSG00000084674,R-HSA-8866423,https://reactome.org/PathwayBrowser/#/R-HSA-8866423,VLDL assembly,TAS,Homo sapiens
+ENSG00000084674,R-HSA-8963888,https://reactome.org/PathwayBrowser/#/R-HSA-8963888,Chylomicron assembly,TAS,Homo sapiens
+ENSG00000084674,R-HSA-8963901,https://reactome.org/PathwayBrowser/#/R-HSA-8963901,Chylomicron remodeling,TAS,Homo sapiens
+ENSG00000084674,R-HSA-8964026,https://reactome.org/PathwayBrowser/#/R-HSA-8964026,Chylomicron clearance,TAS,Homo sapiens
+ENSG00000084674,R-HSA-8964026,https://reactome.org/PathwayBrowser/#/R-HSA-8964026,Chylomicron clearance,IEA,Homo sapiens
+ENSG00000084674,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000084674,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,IEA,Homo sapiens
+ENSG00000084674,R-HSA-8964041,https://reactome.org/PathwayBrowser/#/R-HSA-8964041,LDL remodeling,TAS,Homo sapiens
+ENSG00000084674,R-HSA-8964046,https://reactome.org/PathwayBrowser/#/R-HSA-8964046,VLDL clearance,IEA,Homo sapiens
+ENSG00000084674,R-HSA-8964046,https://reactome.org/PathwayBrowser/#/R-HSA-8964046,VLDL clearance,TAS,Homo sapiens
+ENSG00000085563,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000086159,R-HSA-432047,https://reactome.org/PathwayBrowser/#/R-HSA-432047,Passive transport by Aquaporins,IEA,Homo sapiens
+ENSG00000087086,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000087191,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000087237,R-HSA-8964041,https://reactome.org/PathwayBrowser/#/R-HSA-8964041,LDL remodeling,TAS,Homo sapiens
+ENSG00000087237,R-HSA-8964058,https://reactome.org/PathwayBrowser/#/R-HSA-8964058,HDL remodeling,TAS,Homo sapiens
+ENSG00000087274,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000087460,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000088386,R-HSA-427975,https://reactome.org/PathwayBrowser/#/R-HSA-427975,Proton/oligopeptide cotransporters,TAS,Homo sapiens
+ENSG00000089060,R-HSA-425561,https://reactome.org/PathwayBrowser/#/R-HSA-425561,Sodium/Calcium exchangers,TAS,Homo sapiens
+ENSG00000089060,R-HSA-8949215,https://reactome.org/PathwayBrowser/#/R-HSA-8949215,Mitochondrial calcium ion transport,TAS,Homo sapiens
+ENSG00000089356,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000089472,R-HSA-425410,https://reactome.org/PathwayBrowser/#/R-HSA-425410,Metal ion SLC transporters,TAS,Homo sapiens
+ENSG00000089472,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000090020,R-HSA-425986,https://reactome.org/PathwayBrowser/#/R-HSA-425986,Sodium/Proton exchangers,TAS,Homo sapiens
+ENSG00000090674,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000090674,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000091137,R-HSA-427601,https://reactome.org/PathwayBrowser/#/R-HSA-427601,Multifunctional anion exchangers,TAS,Homo sapiens
+ENSG00000091138,R-HSA-427601,https://reactome.org/PathwayBrowser/#/R-HSA-427601,Multifunctional anion exchangers,TAS,Homo sapiens
+ENSG00000091262,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000091513,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000091513,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000091664,R-HSA-428643,https://reactome.org/PathwayBrowser/#/R-HSA-428643,Organic anion transporters,TAS,Homo sapiens
+ENSG00000092068,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000092096,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000092096,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,IEA,Homo sapiens
+ENSG00000092439,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000099139,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,TAS,Homo sapiens
+ENSG00000099341,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000099904,R-HSA-8963896,https://reactome.org/PathwayBrowser/#/R-HSA-8963896,HDL assembly,TAS,Homo sapiens
+ENSG00000099958,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000100075,R-HSA-428643,https://reactome.org/PathwayBrowser/#/R-HSA-428643,Organic anion transporters,TAS,Homo sapiens
+ENSG00000100156,R-HSA-433692,https://reactome.org/PathwayBrowser/#/R-HSA-433692,Proton-coupled monocarboxylate transport,TAS,Homo sapiens
+ENSG00000100170,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000100191,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000100258,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,TAS,Homo sapiens
+ENSG00000100292,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000100519,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000100554,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000100554,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000100567,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000100678,R-HSA-425561,https://reactome.org/PathwayBrowser/#/R-HSA-425561,Sodium/Calcium exchangers,TAS,Homo sapiens
+ENSG00000100678,R-HSA-8949215,https://reactome.org/PathwayBrowser/#/R-HSA-8949215,Mitochondrial calcium ion transport,IEA,Homo sapiens
+ENSG00000100764,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000100804,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000100902,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000100979,R-HSA-8964058,https://reactome.org/PathwayBrowser/#/R-HSA-8964058,HDL remodeling,TAS,Homo sapiens
+ENSG00000100991,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000101049,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000101182,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000101187,R-HSA-879518,https://reactome.org/PathwayBrowser/#/R-HSA-879518,Transport of organic anions,TAS,Homo sapiens
+ENSG00000101200,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000101200,R-HSA-879518,https://reactome.org/PathwayBrowser/#/R-HSA-879518,Transport of organic anions,TAS,Homo sapiens
+ENSG00000101438,R-HSA-425393,https://reactome.org/PathwayBrowser/#/R-HSA-425393,Transport of inorganic cations/anions and amino acids/oligopeptides,TAS,Homo sapiens
+ENSG00000101670,R-HSA-8964058,https://reactome.org/PathwayBrowser/#/R-HSA-8964058,HDL remodeling,TAS,Homo sapiens
+ENSG00000101974,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000101986,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000102100,R-HSA-727802,https://reactome.org/PathwayBrowser/#/R-HSA-727802,Transport of nucleotide sugars,TAS,Homo sapiens
+ENSG00000102158,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000102452,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000102931,R-HSA-83936,https://reactome.org/PathwayBrowser/#/R-HSA-83936,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane,TAS,Homo sapiens
+ENSG00000103035,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000103064,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000103222,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000103227,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,TAS,Homo sapiens
+ENSG00000103249,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000103257,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000103375,R-HSA-432047,https://reactome.org/PathwayBrowser/#/R-HSA-432047,Passive transport by Aquaporins,TAS,Homo sapiens
+ENSG00000103415,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000103546,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000103569,R-HSA-432030,https://reactome.org/PathwayBrowser/#/R-HSA-432030,Transport of glycerol from adipocytes to the liver by Aquaporins,TAS,Homo sapiens
+ENSG00000103569,R-HSA-432047,https://reactome.org/PathwayBrowser/#/R-HSA-432047,Passive transport by Aquaporins,TAS,Homo sapiens
+ENSG00000103769,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000104043,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000104205,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000104267,R-HSA-1237044,https://reactome.org/PathwayBrowser/#/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,TAS,Homo sapiens
+ENSG00000104267,R-HSA-1247673,https://reactome.org/PathwayBrowser/#/R-HSA-1247673,Erythrocytes take up oxygen and release carbon dioxide,TAS,Homo sapiens
+ENSG00000104321,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000104361,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000104635,R-HSA-442380,https://reactome.org/PathwayBrowser/#/R-HSA-442380,Zinc influx into cells by the SLC39 gene family,TAS,Homo sapiens
+ENSG00000104723,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000104888,R-HSA-428643,https://reactome.org/PathwayBrowser/#/R-HSA-428643,Organic anion transporters,TAS,Homo sapiens
+ENSG00000105143,R-HSA-425393,https://reactome.org/PathwayBrowser/#/R-HSA-425393,Transport of inorganic cations/anions and amino acids/oligopeptides,TAS,Homo sapiens
+ENSG00000105281,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000105409,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000105550,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000105550,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,IEA,Homo sapiens
+ENSG00000105641,R-HSA-428643,https://reactome.org/PathwayBrowser/#/R-HSA-428643,Organic anion transporters,TAS,Homo sapiens
+ENSG00000105675,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000105699,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,IEA,Homo sapiens
+ENSG00000105699,R-HSA-8964046,https://reactome.org/PathwayBrowser/#/R-HSA-8964046,VLDL clearance,IEA,Homo sapiens
+ENSG00000105726,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000105819,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000105929,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000105929,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000106086,R-HSA-9845576,https://reactome.org/PathwayBrowser/#/R-HSA-9845576,Glycosphingolipid transport,TAS,Homo sapiens
+ENSG00000106327,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000106588,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000106688,R-HSA-425393,https://reactome.org/PathwayBrowser/#/R-HSA-425393,Transport of inorganic cations/anions and amino acids/oligopeptides,TAS,Homo sapiens
+ENSG00000107331,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000107560,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000107566,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000107611,R-HSA-8964011,https://reactome.org/PathwayBrowser/#/R-HSA-8964011,HDL clearance,TAS,Homo sapiens
+ENSG00000107745,R-HSA-8949215,https://reactome.org/PathwayBrowser/#/R-HSA-8949215,Mitochondrial calcium ion transport,TAS,Homo sapiens
+ENSG00000107745,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000107798,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000108010,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000108344,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000108528,R-HSA-428643,https://reactome.org/PathwayBrowser/#/R-HSA-428643,Organic anion transporters,TAS,Homo sapiens
+ENSG00000108671,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000108684,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000108846,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000108946,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000109572,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,IEA,Homo sapiens
+ENSG00000109667,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000110243,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,IEA,Homo sapiens
+ENSG00000110243,R-HSA-8963901,https://reactome.org/PathwayBrowser/#/R-HSA-8963901,Chylomicron remodeling,TAS,Homo sapiens
+ENSG00000110244,R-HSA-8963888,https://reactome.org/PathwayBrowser/#/R-HSA-8963888,Chylomicron assembly,TAS,Homo sapiens
+ENSG00000110244,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,IEA,Homo sapiens
+ENSG00000110244,R-HSA-8963901,https://reactome.org/PathwayBrowser/#/R-HSA-8963901,Chylomicron remodeling,TAS,Homo sapiens
+ENSG00000110245,R-HSA-8963888,https://reactome.org/PathwayBrowser/#/R-HSA-8963888,Chylomicron assembly,TAS,Homo sapiens
+ENSG00000110245,R-HSA-8963901,https://reactome.org/PathwayBrowser/#/R-HSA-8963901,Chylomicron remodeling,TAS,Homo sapiens
+ENSG00000110245,R-HSA-8964058,https://reactome.org/PathwayBrowser/#/R-HSA-8964058,HDL remodeling,TAS,Homo sapiens
+ENSG00000110436,R-HSA-425393,https://reactome.org/PathwayBrowser/#/R-HSA-425393,Transport of inorganic cations/anions and amino acids/oligopeptides,TAS,Homo sapiens
+ENSG00000110446,R-HSA-427975,https://reactome.org/PathwayBrowser/#/R-HSA-427975,Proton/oligopeptide cotransporters,TAS,Homo sapiens
+ENSG00000110628,R-HSA-549127,https://reactome.org/PathwayBrowser/#/R-HSA-549127,Organic cation transport,TAS,Homo sapiens
+ENSG00000110719,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000110719,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000110881,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000110911,R-HSA-425410,https://reactome.org/PathwayBrowser/#/R-HSA-425410,Metal ion SLC transporters,TAS,Homo sapiens
+ENSG00000110911,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000111181,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000111181,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000111199,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000111319,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000111371,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000111530,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000111664,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000111700,R-HSA-879518,https://reactome.org/PathwayBrowser/#/R-HSA-879518,Transport of organic anions,TAS,Homo sapiens
+ENSG00000112077,R-HSA-1237044,https://reactome.org/PathwayBrowser/#/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,TAS,Homo sapiens
+ENSG00000112077,R-HSA-1247673,https://reactome.org/PathwayBrowser/#/R-HSA-1247673,Erythrocytes take up oxygen and release carbon dioxide,TAS,Homo sapiens
+ENSG00000112077,R-HSA-444411,https://reactome.org/PathwayBrowser/#/R-HSA-444411,Rhesus glycoproteins mediate ammonium transport,TAS,Homo sapiens
+ENSG00000112394,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000112473,R-HSA-442380,https://reactome.org/PathwayBrowser/#/R-HSA-442380,Zinc influx into cells by the SLC39 gene family,TAS,Homo sapiens
+ENSG00000112499,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000112499,R-HSA-549127,https://reactome.org/PathwayBrowser/#/R-HSA-549127,Organic cation transport,TAS,Homo sapiens
+ENSG00000112759,R-HSA-83936,https://reactome.org/PathwayBrowser/#/R-HSA-83936,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane,TAS,Homo sapiens
+ENSG00000113073,R-HSA-425381,https://reactome.org/PathwayBrowser/#/R-HSA-425381,Bicarbonate transporters,TAS,Homo sapiens
+ENSG00000113396,R-HSA-804914,https://reactome.org/PathwayBrowser/#/R-HSA-804914,Transport of fatty acids,TAS,Homo sapiens
+ENSG00000113504,R-HSA-426117,https://reactome.org/PathwayBrowser/#/R-HSA-426117,Cation-coupled Chloride cotransporters,TAS,Homo sapiens
+ENSG00000113558,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000113732,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000113732,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000114302,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000114450,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000114573,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000114573,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000114770,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000114859,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000114923,R-HSA-425381,https://reactome.org/PathwayBrowser/#/R-HSA-425381,Bicarbonate transporters,TAS,Homo sapiens
+ENSG00000115107,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000115194,R-HSA-435368,https://reactome.org/PathwayBrowser/#/R-HSA-435368,Zinc efflux and compartmentalization by the SLC30 family,IEA,Homo sapiens
+ENSG00000115233,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000115616,R-HSA-425986,https://reactome.org/PathwayBrowser/#/R-HSA-425986,Sodium/Proton exchangers,TAS,Homo sapiens
+ENSG00000115657,R-HSA-1369007,https://reactome.org/PathwayBrowser/#/R-HSA-1369007,Mitochondrial ABC transporters,TAS,Homo sapiens
+ENSG00000115665,R-HSA-425366,https://reactome.org/PathwayBrowser/#/R-HSA-425366,"Transport of bile salts and organic acids, metal ions and amine compounds",TAS,Homo sapiens
+ENSG00000115677,R-HSA-8964011,https://reactome.org/PathwayBrowser/#/R-HSA-8964011,HDL clearance,TAS,Homo sapiens
+ENSG00000115902,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000116039,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000116039,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000116704,R-HSA-727802,https://reactome.org/PathwayBrowser/#/R-HSA-727802,Transport of nucleotide sugars,TAS,Homo sapiens
+ENSG00000117394,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000117410,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000117410,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000117528,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000117620,R-HSA-727802,https://reactome.org/PathwayBrowser/#/R-HSA-727802,Transport of nucleotide sugars,TAS,Homo sapiens
+ENSG00000117834,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000117868,R-HSA-9845576,https://reactome.org/PathwayBrowser/#/R-HSA-9845576,Glycosphingolipid transport,TAS,Homo sapiens
+ENSG00000118137,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000118137,R-HSA-8963888,https://reactome.org/PathwayBrowser/#/R-HSA-8963888,Chylomicron assembly,TAS,Homo sapiens
+ENSG00000118137,R-HSA-8963896,https://reactome.org/PathwayBrowser/#/R-HSA-8963896,HDL assembly,TAS,Homo sapiens
+ENSG00000118137,R-HSA-8963901,https://reactome.org/PathwayBrowser/#/R-HSA-8963901,Chylomicron remodeling,TAS,Homo sapiens
+ENSG00000118137,R-HSA-8964011,https://reactome.org/PathwayBrowser/#/R-HSA-8964011,HDL clearance,TAS,Homo sapiens
+ENSG00000118137,R-HSA-8964058,https://reactome.org/PathwayBrowser/#/R-HSA-8964058,HDL remodeling,TAS,Homo sapiens
+ENSG00000118160,R-HSA-425561,https://reactome.org/PathwayBrowser/#/R-HSA-425561,Sodium/Calcium exchangers,TAS,Homo sapiens
+ENSG00000118322,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000118515,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000118564,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000118596,R-HSA-433692,https://reactome.org/PathwayBrowser/#/R-HSA-433692,Proton-coupled monocarboxylate transport,TAS,Homo sapiens
+ENSG00000118729,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000118777,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000119121,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000119655,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000119782,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000119899,R-HSA-428643,https://reactome.org/PathwayBrowser/#/R-HSA-428643,Organic anion transporters,TAS,Homo sapiens
+ENSG00000119929,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,IEA,Homo sapiens
+ENSG00000120509,R-HSA-425397,https://reactome.org/PathwayBrowser/#/R-HSA-425397,"Transport of vitamins, nucleosides, and related molecules",TAS,Homo sapiens
+ENSG00000120509,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000121057,R-HSA-8949215,https://reactome.org/PathwayBrowser/#/R-HSA-8949215,Mitochondrial calcium ion transport,IEA,Homo sapiens
+ENSG00000121270,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000121281,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000122705,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000122705,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000122729,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000123124,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000123191,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000123643,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000123643,R-HSA-428559,https://reactome.org/PathwayBrowser/#/R-HSA-428559,Proton-coupled neutral amino acid transporters,TAS,Homo sapiens
+ENSG00000124067,R-HSA-426117,https://reactome.org/PathwayBrowser/#/R-HSA-426117,Cation-coupled Chloride cotransporters,TAS,Homo sapiens
+ENSG00000124140,R-HSA-426117,https://reactome.org/PathwayBrowser/#/R-HSA-426117,Cation-coupled Chloride cotransporters,TAS,Homo sapiens
+ENSG00000124406,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000124532,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000124564,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000124568,R-HSA-428643,https://reactome.org/PathwayBrowser/#/R-HSA-428643,Organic anion transporters,TAS,Homo sapiens
+ENSG00000124574,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000124786,R-HSA-727802,https://reactome.org/PathwayBrowser/#/R-HSA-727802,Transport of nucleotide sugars,TAS,Homo sapiens
+ENSG00000125257,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000125977,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000126067,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000126545,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000126562,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000126895,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000127249,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000127325,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000127412,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000127588,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000127920,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000127922,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000127928,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000127954,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000128524,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000128524,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000129084,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000129244,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000129353,R-HSA-425366,https://reactome.org/PathwayBrowser/#/R-HSA-425366,"Transport of bile salts and organic acids, metal ions and amine compounds",TAS,Homo sapiens
+ENSG00000129465,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000129467,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000129559,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000130164,R-HSA-8964026,https://reactome.org/PathwayBrowser/#/R-HSA-8964026,Chylomicron clearance,IEA,Homo sapiens
+ENSG00000130164,R-HSA-8964026,https://reactome.org/PathwayBrowser/#/R-HSA-8964026,Chylomicron clearance,TAS,Homo sapiens
+ENSG00000130164,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000130173,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,TAS,Homo sapiens
+ENSG00000130203,R-HSA-8963888,https://reactome.org/PathwayBrowser/#/R-HSA-8963888,Chylomicron assembly,TAS,Homo sapiens
+ENSG00000130203,R-HSA-8963901,https://reactome.org/PathwayBrowser/#/R-HSA-8963901,Chylomicron remodeling,TAS,Homo sapiens
+ENSG00000130203,R-HSA-8964026,https://reactome.org/PathwayBrowser/#/R-HSA-8964026,Chylomicron clearance,IEA,Homo sapiens
+ENSG00000130203,R-HSA-8964026,https://reactome.org/PathwayBrowser/#/R-HSA-8964026,Chylomicron clearance,TAS,Homo sapiens
+ENSG00000130203,R-HSA-8964058,https://reactome.org/PathwayBrowser/#/R-HSA-8964058,HDL remodeling,TAS,Homo sapiens
+ENSG00000130208,R-HSA-8866423,https://reactome.org/PathwayBrowser/#/R-HSA-8866423,VLDL assembly,TAS,Homo sapiens
+ENSG00000130208,R-HSA-8964046,https://reactome.org/PathwayBrowser/#/R-HSA-8964046,VLDL clearance,IEA,Homo sapiens
+ENSG00000130208,R-HSA-8964046,https://reactome.org/PathwayBrowser/#/R-HSA-8964046,VLDL clearance,TAS,Homo sapiens
+ENSG00000130270,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000130304,R-HSA-804914,https://reactome.org/PathwayBrowser/#/R-HSA-804914,Transport of fatty acids,TAS,Homo sapiens
+ENSG00000130529,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000130706,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000130741,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000130876,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000130958,R-HSA-727802,https://reactome.org/PathwayBrowser/#/R-HSA-727802,Transport of nucleotide sugars,TAS,Homo sapiens
+ENSG00000130958,R-HSA-727802,https://reactome.org/PathwayBrowser/#/R-HSA-727802,Transport of nucleotide sugars,IEA,Homo sapiens
+ENSG00000131100,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000131100,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000131183,R-HSA-427589,https://reactome.org/PathwayBrowser/#/R-HSA-427589,Type II Na+/Pi cotransporters,TAS,Homo sapiens
+ENSG00000131269,R-HSA-1369007,https://reactome.org/PathwayBrowser/#/R-HSA-1369007,Mitochondrial ABC transporters,TAS,Homo sapiens
+ENSG00000131389,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000131389,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000131408,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000131620,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000132155,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000132164,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000132677,R-HSA-444411,https://reactome.org/PathwayBrowser/#/R-HSA-444411,Rhesus glycoproteins mediate ammonium transport,TAS,Homo sapiens
+ENSG00000132681,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000132855,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,TAS,Homo sapiens
+ENSG00000132874,R-HSA-425366,https://reactome.org/PathwayBrowser/#/R-HSA-425366,"Transport of bile salts and organic acids, metal ions and amine compounds",TAS,Homo sapiens
+ENSG00000132932,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000133065,R-HSA-425410,https://reactome.org/PathwayBrowser/#/R-HSA-425410,Metal ion SLC transporters,TAS,Homo sapiens
+ENSG00000133107,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000133115,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000133460,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000133742,R-HSA-1237044,https://reactome.org/PathwayBrowser/#/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,TAS,Homo sapiens
+ENSG00000133742,R-HSA-1247673,https://reactome.org/PathwayBrowser/#/R-HSA-1247673,Erythrocytes take up oxygen and release carbon dioxide,TAS,Homo sapiens
+ENSG00000133958,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000134001,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000134160,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000134294,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000134343,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000134538,R-HSA-879518,https://reactome.org/PathwayBrowser/#/R-HSA-879518,Transport of organic anions,TAS,Homo sapiens
+ENSG00000135506,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000135517,R-HSA-432047,https://reactome.org/PathwayBrowser/#/R-HSA-432047,Passive transport by Aquaporins,TAS,Homo sapiens
+ENSG00000135740,R-HSA-425986,https://reactome.org/PathwayBrowser/#/R-HSA-425986,Sodium/Proton exchangers,TAS,Homo sapiens
+ENSG00000135776,R-HSA-1369007,https://reactome.org/PathwayBrowser/#/R-HSA-1369007,Mitochondrial ABC transporters,TAS,Homo sapiens
+ENSG00000136052,R-HSA-425410,https://reactome.org/PathwayBrowser/#/R-HSA-425410,Metal ion SLC transporters,TAS,Homo sapiens
+ENSG00000136295,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000136381,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000136758,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000136802,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000136856,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000136868,R-HSA-425410,https://reactome.org/PathwayBrowser/#/R-HSA-425410,Metal ion SLC transporters,TAS,Homo sapiens
+ENSG00000136888,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000136888,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000136930,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000136986,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000137204,R-HSA-561048,https://reactome.org/PathwayBrowser/#/R-HSA-561048,Organic anion transport,TAS,Homo sapiens
+ENSG00000137275,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000137491,R-HSA-879518,https://reactome.org/PathwayBrowser/#/R-HSA-879518,Transport of organic anions,TAS,Homo sapiens
+ENSG00000137672,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000137726,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000137731,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000137860,R-HSA-83936,https://reactome.org/PathwayBrowser/#/R-HSA-83936,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane,TAS,Homo sapiens
+ENSG00000137968,R-HSA-425366,https://reactome.org/PathwayBrowser/#/R-HSA-425366,"Transport of bile salts and organic acids, metal ions and amine compounds",TAS,Homo sapiens
+ENSG00000137975,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000138031,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000138074,R-HSA-425397,https://reactome.org/PathwayBrowser/#/R-HSA-425397,"Transport of vitamins, nucleosides, and related molecules",TAS,Homo sapiens
+ENSG00000138075,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000138079,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000138449,R-HSA-425410,https://reactome.org/PathwayBrowser/#/R-HSA-425410,Metal ion SLC transporters,TAS,Homo sapiens
+ENSG00000138449,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000138741,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000138821,R-HSA-442380,https://reactome.org/PathwayBrowser/#/R-HSA-442380,Zinc influx into cells by the SLC39 gene family,TAS,Homo sapiens
+ENSG00000138823,R-HSA-8866423,https://reactome.org/PathwayBrowser/#/R-HSA-8866423,VLDL assembly,TAS,Homo sapiens
+ENSG00000138823,R-HSA-8963888,https://reactome.org/PathwayBrowser/#/R-HSA-8963888,Chylomicron assembly,TAS,Homo sapiens
+ENSG00000138823,R-HSA-8964041,https://reactome.org/PathwayBrowser/#/R-HSA-8964041,LDL remodeling,TAS,Homo sapiens
+ENSG00000138942,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000139155,R-HSA-879518,https://reactome.org/PathwayBrowser/#/R-HSA-879518,Transport of organic anions,TAS,Homo sapiens
+ENSG00000139209,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000139370,R-HSA-427975,https://reactome.org/PathwayBrowser/#/R-HSA-427975,Proton/oligopeptide cotransporters,TAS,Homo sapiens
+ENSG00000139433,R-HSA-9845576,https://reactome.org/PathwayBrowser/#/R-HSA-9845576,Glycosphingolipid transport,TAS,Homo sapiens
+ENSG00000139514,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000139540,R-HSA-442380,https://reactome.org/PathwayBrowser/#/R-HSA-442380,Zinc influx into cells by the SLC39 gene family,IEA,Homo sapiens
+ENSG00000139641,R-HSA-9845576,https://reactome.org/PathwayBrowser/#/R-HSA-9845576,Glycosphingolipid transport,TAS,Homo sapiens
+ENSG00000140090,R-HSA-425561,https://reactome.org/PathwayBrowser/#/R-HSA-425561,Sodium/Calcium exchangers,TAS,Homo sapiens
+ENSG00000140157,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000140199,R-HSA-426117,https://reactome.org/PathwayBrowser/#/R-HSA-426117,Cation-coupled Chloride cotransporters,TAS,Homo sapiens
+ENSG00000140479,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,TAS,Homo sapiens
+ENSG00000140519,R-HSA-444411,https://reactome.org/PathwayBrowser/#/R-HSA-444411,Rhesus glycoproteins mediate ammonium transport,TAS,Homo sapiens
+ENSG00000140564,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,TAS,Homo sapiens
+ENSG00000140675,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000140943,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,IEA,Homo sapiens
+ENSG00000141338,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000141367,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000141367,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000141385,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000141424,R-HSA-442380,https://reactome.org/PathwayBrowser/#/R-HSA-442380,Zinc influx into cells by the SLC39 gene family,TAS,Homo sapiens
+ENSG00000141458,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000141469,R-HSA-425366,https://reactome.org/PathwayBrowser/#/R-HSA-425366,"Transport of bile salts and organic acids, metal ions and amine compounds",TAS,Homo sapiens
+ENSG00000141485,R-HSA-433137,https://reactome.org/PathwayBrowser/#/R-HSA-433137,"Sodium-coupled sulphate, di- and tri-carboxylate transporters",TAS,Homo sapiens
+ENSG00000141526,R-HSA-433692,https://reactome.org/PathwayBrowser/#/R-HSA-433692,Proton-coupled monocarboxylate transport,TAS,Homo sapiens
+ENSG00000141540,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000141873,R-HSA-442380,https://reactome.org/PathwayBrowser/#/R-HSA-442380,Zinc influx into cells by the SLC39 gene family,TAS,Homo sapiens
+ENSG00000142185,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000142319,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000142494,R-HSA-425366,https://reactome.org/PathwayBrowser/#/R-HSA-425366,"Transport of bile salts and organic acids, metal ions and amine compounds",TAS,Homo sapiens
+ENSG00000142507,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000142875,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000142875,R-HSA-8963896,https://reactome.org/PathwayBrowser/#/R-HSA-8963896,HDL assembly,TAS,Homo sapiens
+ENSG00000142959,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000143036,R-HSA-425366,https://reactome.org/PathwayBrowser/#/R-HSA-425366,"Transport of bile salts and organic acids, metal ions and amine compounds",TAS,Homo sapiens
+ENSG00000143106,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000143153,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000143318,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000143515,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000143570,R-HSA-442380,https://reactome.org/PathwayBrowser/#/R-HSA-442380,Zinc influx into cells by the SLC39 gene family,TAS,Homo sapiens
+ENSG00000143595,R-HSA-432047,https://reactome.org/PathwayBrowser/#/R-HSA-432047,Passive transport by Aquaporins,TAS,Homo sapiens
+ENSG00000143761,R-HSA-9845576,https://reactome.org/PathwayBrowser/#/R-HSA-9845576,Glycosphingolipid transport,TAS,Homo sapiens
+ENSG00000143882,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000143882,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000143921,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000143947,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000143947,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000143947,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000143947,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000144136,R-HSA-427652,https://reactome.org/PathwayBrowser/#/R-HSA-427652,Sodium-coupled phosphate cotransporters,TAS,Homo sapiens
+ENSG00000144290,R-HSA-425381,https://reactome.org/PathwayBrowser/#/R-HSA-425381,Bicarbonate transporters,TAS,Homo sapiens
+ENSG00000144406,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000144452,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000144481,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000144741,R-HSA-425393,https://reactome.org/PathwayBrowser/#/R-HSA-425393,Transport of inorganic cations/anions and amino acids/oligopeptides,TAS,Homo sapiens
+ENSG00000144935,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000144959,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000145217,R-HSA-427601,https://reactome.org/PathwayBrowser/#/R-HSA-427601,Multifunctional anion exchangers,TAS,Homo sapiens
+ENSG00000145246,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000145283,R-HSA-425366,https://reactome.org/PathwayBrowser/#/R-HSA-425366,"Transport of bile salts and organic acids, metal ions and amine compounds",TAS,Homo sapiens
+ENSG00000145349,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000145740,R-HSA-435368,https://reactome.org/PathwayBrowser/#/R-HSA-435368,Zinc efflux and compartmentalization by the SLC30 family,TAS,Homo sapiens
+ENSG00000146205,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000146411,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000146477,R-HSA-549127,https://reactome.org/PathwayBrowser/#/R-HSA-549127,Organic cation transport,TAS,Homo sapiens
+ENSG00000147100,R-HSA-879518,https://reactome.org/PathwayBrowser/#/R-HSA-879518,Transport of organic anions,TAS,Homo sapiens
+ENSG00000147416,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000147416,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000147475,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000147606,R-HSA-427601,https://reactome.org/PathwayBrowser/#/R-HSA-427601,Multifunctional anion exchangers,TAS,Homo sapiens
+ENSG00000147614,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000147614,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000147804,R-HSA-442380,https://reactome.org/PathwayBrowser/#/R-HSA-442380,Zinc influx into cells by the SLC39 gene family,TAS,Homo sapiens
+ENSG00000147852,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000147852,R-HSA-8964046,https://reactome.org/PathwayBrowser/#/R-HSA-8964046,VLDL clearance,TAS,Homo sapiens
+ENSG00000148175,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000148346,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000148346,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,IEA,Homo sapiens
+ENSG00000148386,R-HSA-804914,https://reactome.org/PathwayBrowser/#/R-HSA-804914,Transport of fatty acids,TAS,Homo sapiens
+ENSG00000148660,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000148700,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000148942,R-HSA-427601,https://reactome.org/PathwayBrowser/#/R-HSA-427601,Multifunctional anion exchangers,TAS,Homo sapiens
+ENSG00000149150,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000149452,R-HSA-561048,https://reactome.org/PathwayBrowser/#/R-HSA-561048,Organic anion transport,TAS,Homo sapiens
+ENSG00000150201,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000150967,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000150991,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000150991,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000150991,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000150991,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000151012,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000151229,R-HSA-429593,https://reactome.org/PathwayBrowser/#/R-HSA-429593,Inositol transporters,TAS,Homo sapiens
+ENSG00000151418,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000151418,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000151572,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000151729,R-HSA-83936,https://reactome.org/PathwayBrowser/#/R-HSA-83936,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane,TAS,Homo sapiens
+ENSG00000152700,R-HSA-8963888,https://reactome.org/PathwayBrowser/#/R-HSA-8963888,Chylomicron assembly,TAS,Homo sapiens
+ENSG00000153898,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000154025,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000154122,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000154258,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000154262,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000154263,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000154265,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000155097,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000155097,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000155380,R-HSA-433692,https://reactome.org/PathwayBrowser/#/R-HSA-433692,Proton-coupled monocarboxylate transport,TAS,Homo sapiens
+ENSG00000155465,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000155850,R-HSA-427601,https://reactome.org/PathwayBrowser/#/R-HSA-427601,Multifunctional anion exchangers,TAS,Homo sapiens
+ENSG00000155886,R-HSA-425561,https://reactome.org/PathwayBrowser/#/R-HSA-425561,Sodium/Calcium exchangers,TAS,Homo sapiens
+ENSG00000155897,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000155962,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000155970,R-HSA-8949215,https://reactome.org/PathwayBrowser/#/R-HSA-8949215,Mitochondrial calcium ion transport,TAS,Homo sapiens
+ENSG00000155970,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000156026,R-HSA-8949215,https://reactome.org/PathwayBrowser/#/R-HSA-8949215,Mitochondrial calcium ion transport,TAS,Homo sapiens
+ENSG00000156026,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000156222,R-HSA-83936,https://reactome.org/PathwayBrowser/#/R-HSA-83936,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane,TAS,Homo sapiens
+ENSG00000157087,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000157103,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000157514,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000157593,R-HSA-727802,https://reactome.org/PathwayBrowser/#/R-HSA-727802,Transport of nucleotide sugars,TAS,Homo sapiens
+ENSG00000157765,R-HSA-427589,https://reactome.org/PathwayBrowser/#/R-HSA-427589,Type II Na+/Pi cotransporters,TAS,Homo sapiens
+ENSG00000157978,R-HSA-8964026,https://reactome.org/PathwayBrowser/#/R-HSA-8964026,Chylomicron clearance,TAS,Homo sapiens
+ENSG00000157978,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000158014,R-HSA-435368,https://reactome.org/PathwayBrowser/#/R-HSA-435368,Zinc efflux and compartmentalization by the SLC30 family,IEA,Homo sapiens
+ENSG00000158220,R-HSA-9845576,https://reactome.org/PathwayBrowser/#/R-HSA-9845576,Glycosphingolipid transport,TAS,Homo sapiens
+ENSG00000158296,R-HSA-433137,https://reactome.org/PathwayBrowser/#/R-HSA-433137,"Sodium-coupled sulphate, di- and tri-carboxylate transporters",TAS,Homo sapiens
+ENSG00000158467,R-HSA-425381,https://reactome.org/PathwayBrowser/#/R-HSA-425381,Bicarbonate transporters,TAS,Homo sapiens
+ENSG00000158715,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000158856,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000158865,R-HSA-429593,https://reactome.org/PathwayBrowser/#/R-HSA-429593,Inositol transporters,TAS,Homo sapiens
+ENSG00000158874,R-HSA-8963888,https://reactome.org/PathwayBrowser/#/R-HSA-8963888,Chylomicron assembly,TAS,Homo sapiens
+ENSG00000158874,R-HSA-8963901,https://reactome.org/PathwayBrowser/#/R-HSA-8963901,Chylomicron remodeling,TAS,Homo sapiens
+ENSG00000159216,R-HSA-549127,https://reactome.org/PathwayBrowser/#/R-HSA-549127,Organic cation transport,TAS,Homo sapiens
+ENSG00000159348,R-HSA-1237044,https://reactome.org/PathwayBrowser/#/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,TAS,Homo sapiens
+ENSG00000159363,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000159377,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000159720,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000159720,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000159763,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000160179,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000160179,R-HSA-8964058,https://reactome.org/PathwayBrowser/#/R-HSA-8964058,HDL remodeling,TAS,Homo sapiens
+ENSG00000160326,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000160349,R-HSA-804914,https://reactome.org/PathwayBrowser/#/R-HSA-804914,Transport of fatty acids,TAS,Homo sapiens
+ENSG00000160746,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000160862,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000161057,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000161203,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000161203,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000161544,R-HSA-8981607,https://reactome.org/PathwayBrowser/#/R-HSA-8981607,Intracellular oxygen transport,TAS,Homo sapiens
+ENSG00000161798,R-HSA-432047,https://reactome.org/PathwayBrowser/#/R-HSA-432047,Passive transport by Aquaporins,TAS,Homo sapiens
+ENSG00000162104,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000162188,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000162341,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000162383,R-HSA-425393,https://reactome.org/PathwayBrowser/#/R-HSA-425393,Transport of inorganic cations/anions and amino acids/oligopeptides,TAS,Homo sapiens
+ENSG00000162399,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000162572,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000162735,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000162753,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000162769,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000162972,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000163293,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000163393,R-HSA-549127,https://reactome.org/PathwayBrowser/#/R-HSA-549127,Organic cation transport,TAS,Homo sapiens
+ENSG00000163399,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000163581,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000163631,R-HSA-8964058,https://reactome.org/PathwayBrowser/#/R-HSA-8964058,HDL remodeling,TAS,Homo sapiens
+ENSG00000163636,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000163817,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000163817,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000164037,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000164038,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000164363,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000164363,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000164414,R-HSA-727802,https://reactome.org/PathwayBrowser/#/R-HSA-727802,Transport of nucleotide sugars,TAS,Homo sapiens
+ENSG00000164638,R-HSA-83936,https://reactome.org/PathwayBrowser/#/R-HSA-83936,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane,TAS,Homo sapiens
+ENSG00000164707,R-HSA-433137,https://reactome.org/PathwayBrowser/#/R-HSA-433137,"Sodium-coupled sulphate, di- and tri-carboxylate transporters",TAS,Homo sapiens
+ENSG00000164742,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000164756,R-HSA-435368,https://reactome.org/PathwayBrowser/#/R-HSA-435368,Zinc efflux and compartmentalization by the SLC30 family,TAS,Homo sapiens
+ENSG00000164889,R-HSA-425381,https://reactome.org/PathwayBrowser/#/R-HSA-425381,Bicarbonate transporters,TAS,Homo sapiens
+ENSG00000165029,R-HSA-8963896,https://reactome.org/PathwayBrowser/#/R-HSA-8963896,HDL assembly,TAS,Homo sapiens
+ENSG00000165059,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000165059,R-HSA-8963896,https://reactome.org/PathwayBrowser/#/R-HSA-8963896,HDL assembly,TAS,Homo sapiens
+ENSG00000165125,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000165238,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000165240,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000165269,R-HSA-432030,https://reactome.org/PathwayBrowser/#/R-HSA-432030,Transport of glycerol from adipocytes to the liver by Aquaporins,TAS,Homo sapiens
+ENSG00000165269,R-HSA-432047,https://reactome.org/PathwayBrowser/#/R-HSA-432047,Passive transport by Aquaporins,TAS,Homo sapiens
+ENSG00000165272,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000165272,R-HSA-432047,https://reactome.org/PathwayBrowser/#/R-HSA-432047,Passive transport by Aquaporins,TAS,Homo sapiens
+ENSG00000165280,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000165283,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000165349,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000165487,R-HSA-8949215,https://reactome.org/PathwayBrowser/#/R-HSA-8949215,Mitochondrial calcium ion transport,TAS,Homo sapiens
+ENSG00000165487,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000165553,R-HSA-8981607,https://reactome.org/PathwayBrowser/#/R-HSA-8981607,Intracellular oxygen transport,TAS,Homo sapiens
+ENSG00000165637,R-HSA-8949215,https://reactome.org/PathwayBrowser/#/R-HSA-8949215,Mitochondrial calcium ion transport,IEA,Homo sapiens
+ENSG00000165646,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000165688,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000165794,R-HSA-442380,https://reactome.org/PathwayBrowser/#/R-HSA-442380,Zinc influx into cells by the SLC39 gene family,TAS,Homo sapiens
+ENSG00000165916,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000165970,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000166035,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,TAS,Homo sapiens
+ENSG00000166035,R-HSA-8964026,https://reactome.org/PathwayBrowser/#/R-HSA-8964026,Chylomicron clearance,TAS,Homo sapiens
+ENSG00000166126,R-HSA-8964011,https://reactome.org/PathwayBrowser/#/R-HSA-8964011,HDL clearance,TAS,Homo sapiens
+ENSG00000166377,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000166394,R-HSA-1237044,https://reactome.org/PathwayBrowser/#/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,TAS,Homo sapiens
+ENSG00000166828,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000167083,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000167085,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000167114,R-HSA-804914,https://reactome.org/PathwayBrowser/#/R-HSA-804914,Transport of fatty acids,TAS,Homo sapiens
+ENSG00000167306,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000167414,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000167434,R-HSA-1237044,https://reactome.org/PathwayBrowser/#/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,TAS,Homo sapiens
+ENSG00000167434,R-HSA-1247673,https://reactome.org/PathwayBrowser/#/R-HSA-1247673,Erythrocytes take up oxygen and release carbon dioxide,TAS,Homo sapiens
+ENSG00000167580,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000167580,R-HSA-432047,https://reactome.org/PathwayBrowser/#/R-HSA-432047,Passive transport by Aquaporins,TAS,Homo sapiens
+ENSG00000167614,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000167703,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000167723,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000167772,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,TAS,Homo sapiens
+ENSG00000167780,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000167972,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000167995,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000167996,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000168003,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000168065,R-HSA-561048,https://reactome.org/PathwayBrowser/#/R-HSA-561048,Organic anion transport,TAS,Homo sapiens
+ENSG00000168243,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000168404,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000168447,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000168487,R-HSA-8963896,https://reactome.org/PathwayBrowser/#/R-HSA-8963896,HDL assembly,TAS,Homo sapiens
+ENSG00000168575,R-HSA-427652,https://reactome.org/PathwayBrowser/#/R-HSA-427652,Sodium-coupled phosphate cotransporters,TAS,Homo sapiens
+ENSG00000168924,R-HSA-8949215,https://reactome.org/PathwayBrowser/#/R-HSA-8949215,Mitochondrial calcium ion transport,IEA,Homo sapiens
+ENSG00000169100,R-HSA-83936,https://reactome.org/PathwayBrowser/#/R-HSA-83936,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane,TAS,Homo sapiens
+ENSG00000169174,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000169174,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000169241,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000169359,R-HSA-425397,https://reactome.org/PathwayBrowser/#/R-HSA-425397,"Transport of vitamins, nucleosides, and related molecules",TAS,Homo sapiens
+ENSG00000169446,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,IEA,Homo sapiens
+ENSG00000170113,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000170290,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000170315,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000170315,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000170315,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000170315,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000170385,R-HSA-435368,https://reactome.org/PathwayBrowser/#/R-HSA-435368,Zinc efflux and compartmentalization by the SLC30 family,TAS,Homo sapiens
+ENSG00000170571,R-HSA-433692,https://reactome.org/PathwayBrowser/#/R-HSA-433692,Proton-coupled monocarboxylate transport,TAS,Homo sapiens
+ENSG00000171017,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000171130,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000171130,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000171209,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000171365,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000171488,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000171492,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000171714,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000171885,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000171885,R-HSA-432047,https://reactome.org/PathwayBrowser/#/R-HSA-432047,Passive transport by Aquaporins,TAS,Homo sapiens
+ENSG00000172139,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,IEA,Homo sapiens
+ENSG00000172270,R-HSA-433692,https://reactome.org/PathwayBrowser/#/R-HSA-433692,Proton-coupled monocarboxylate transport,TAS,Homo sapiens
+ENSG00000172350,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000172354,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000172380,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000172548,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000172828,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000173175,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000173208,R-HSA-1369062,https://reactome.org/PathwayBrowser/#/R-HSA-1369062,ABC transporters in lipid homeostasis,TAS,Homo sapiens
+ENSG00000173214,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000173262,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000173692,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000173930,R-HSA-879518,https://reactome.org/PathwayBrowser/#/R-HSA-879518,Transport of organic anions,TAS,Homo sapiens
+ENSG00000174021,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000174233,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000174358,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000174358,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000174437,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000174502,R-HSA-427601,https://reactome.org/PathwayBrowser/#/R-HSA-427601,Multifunctional anion exchangers,TAS,Homo sapiens
+ENSG00000174640,R-HSA-879518,https://reactome.org/PathwayBrowser/#/R-HSA-879518,Transport of organic anions,TAS,Homo sapiens
+ENSG00000174669,R-HSA-83936,https://reactome.org/PathwayBrowser/#/R-HSA-83936,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane,TAS,Homo sapiens
+ENSG00000175003,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000175003,R-HSA-549127,https://reactome.org/PathwayBrowser/#/R-HSA-549127,Organic cation transport,TAS,Homo sapiens
+ENSG00000175166,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000175193,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000175336,R-HSA-8964041,https://reactome.org/PathwayBrowser/#/R-HSA-8964041,LDL remodeling,TAS,Homo sapiens
+ENSG00000175445,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,TAS,Homo sapiens
+ENSG00000175445,R-HSA-8963901,https://reactome.org/PathwayBrowser/#/R-HSA-8963901,Chylomicron remodeling,TAS,Homo sapiens
+ENSG00000175899,R-HSA-8963896,https://reactome.org/PathwayBrowser/#/R-HSA-8963896,HDL assembly,TAS,Homo sapiens
+ENSG00000176463,R-HSA-879518,https://reactome.org/PathwayBrowser/#/R-HSA-879518,Transport of organic anions,TAS,Homo sapiens
+ENSG00000176533,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000177119,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000177542,R-HSA-428643,https://reactome.org/PathwayBrowser/#/R-HSA-428643,Organic anion transporters,TAS,Homo sapiens
+ENSG00000177984,R-HSA-804914,https://reactome.org/PathwayBrowser/#/R-HSA-804914,Transport of fatty acids,TAS,Homo sapiens
+ENSG00000178301,R-HSA-432047,https://reactome.org/PathwayBrowser/#/R-HSA-432047,Passive transport by Aquaporins,TAS,Homo sapiens
+ENSG00000179520,R-HSA-428643,https://reactome.org/PathwayBrowser/#/R-HSA-428643,Organic anion transporters,TAS,Homo sapiens
+ENSG00000180251,R-HSA-425986,https://reactome.org/PathwayBrowser/#/R-HSA-425986,Sodium/Proton exchangers,TAS,Homo sapiens
+ENSG00000180638,R-HSA-425366,https://reactome.org/PathwayBrowser/#/R-HSA-425366,"Transport of bile salts and organic acids, metal ions and amine compounds",TAS,Homo sapiens
+ENSG00000180773,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000181045,R-HSA-427601,https://reactome.org/PathwayBrowser/#/R-HSA-427601,Multifunctional anion exchangers,TAS,Homo sapiens
+ENSG00000181804,R-HSA-425986,https://reactome.org/PathwayBrowser/#/R-HSA-425986,Sodium/Proton exchangers,TAS,Homo sapiens
+ENSG00000181830,R-HSA-727802,https://reactome.org/PathwayBrowser/#/R-HSA-727802,Transport of nucleotide sugars,TAS,Homo sapiens
+ENSG00000181856,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000181867,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000182902,R-HSA-428643,https://reactome.org/PathwayBrowser/#/R-HSA-428643,Organic anion transporters,TAS,Homo sapiens
+ENSG00000183020,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000183020,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000183023,R-HSA-425561,https://reactome.org/PathwayBrowser/#/R-HSA-425561,Sodium/Calcium exchangers,TAS,Homo sapiens
+ENSG00000183048,R-HSA-428643,https://reactome.org/PathwayBrowser/#/R-HSA-428643,Organic anion transporters,TAS,Homo sapiens
+ENSG00000183172,R-HSA-8949215,https://reactome.org/PathwayBrowser/#/R-HSA-8949215,Mitochondrial calcium ion transport,TAS,Homo sapiens
+ENSG00000183172,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000184730,R-HSA-8964046,https://reactome.org/PathwayBrowser/#/R-HSA-8964046,VLDL clearance,TAS,Homo sapiens
+ENSG00000184908,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000184925,R-HSA-804914,https://reactome.org/PathwayBrowser/#/R-HSA-804914,Transport of fatty acids,TAS,Homo sapiens
+ENSG00000184945,R-HSA-432047,https://reactome.org/PathwayBrowser/#/R-HSA-432047,Passive transport by Aquaporins,TAS,Homo sapiens
+ENSG00000185052,R-HSA-425561,https://reactome.org/PathwayBrowser/#/R-HSA-425561,Sodium/Calcium exchangers,TAS,Homo sapiens
+ENSG00000185101,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000185344,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000185344,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000185624,R-HSA-8866423,https://reactome.org/PathwayBrowser/#/R-HSA-8866423,VLDL assembly,TAS,Homo sapiens
+ENSG00000185624,R-HSA-8963888,https://reactome.org/PathwayBrowser/#/R-HSA-8963888,Chylomicron assembly,TAS,Homo sapiens
+ENSG00000185624,R-HSA-8964041,https://reactome.org/PathwayBrowser/#/R-HSA-8964041,LDL remodeling,TAS,Homo sapiens
+ENSG00000185627,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000185883,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000185883,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000186009,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000186335,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000186335,R-HSA-428559,https://reactome.org/PathwayBrowser/#/R-HSA-428559,Proton-coupled neutral amino acid transporters,TAS,Homo sapiens
+ENSG00000186439,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000186469,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000186510,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000186815,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000187288,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,IEA,Homo sapiens
+ENSG00000187486,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000187527,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000187688,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000188037,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000188191,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000188338,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000188467,R-HSA-425561,https://reactome.org/PathwayBrowser/#/R-HSA-425561,Sodium/Calcium exchangers,TAS,Homo sapiens
+ENSG00000188536,R-HSA-1237044,https://reactome.org/PathwayBrowser/#/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,TAS,Homo sapiens
+ENSG00000188536,R-HSA-1247673,https://reactome.org/PathwayBrowser/#/R-HSA-1247673,Erythrocytes take up oxygen and release carbon dioxide,TAS,Homo sapiens
+ENSG00000188603,R-HSA-9845576,https://reactome.org/PathwayBrowser/#/R-HSA-9845576,Glycosphingolipid transport,TAS,Homo sapiens
+ENSG00000188687,R-HSA-425381,https://reactome.org/PathwayBrowser/#/R-HSA-425381,Bicarbonate transporters,TAS,Homo sapiens
+ENSG00000189058,R-HSA-804914,https://reactome.org/PathwayBrowser/#/R-HSA-804914,Transport of fatty acids,TAS,Homo sapiens
+ENSG00000196218,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000196296,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000196517,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000196632,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000196660,R-HSA-425410,https://reactome.org/PathwayBrowser/#/R-HSA-425410,Metal ion SLC transporters,TAS,Homo sapiens
+ENSG00000196689,R-HSA-3295583,https://reactome.org/PathwayBrowser/#/R-HSA-3295583,TRP channels,TAS,Homo sapiens
+ENSG00000196950,R-HSA-442380,https://reactome.org/PathwayBrowser/#/R-HSA-442380,Zinc influx into cells by the SLC39 gene family,IEA,Homo sapiens
+ENSG00000196961,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000196961,R-HSA-8964038,https://reactome.org/PathwayBrowser/#/R-HSA-8964038,LDL clearance,TAS,Homo sapiens
+ENSG00000197119,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000197147,R-HSA-5223345,https://reactome.org/PathwayBrowser/#/R-HSA-5223345,Miscellaneous transport and binding events,TAS,Homo sapiens
+ENSG00000197150,R-HSA-1369007,https://reactome.org/PathwayBrowser/#/R-HSA-1369007,Mitochondrial ABC transporters,TAS,Homo sapiens
+ENSG00000197170,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000197208,R-HSA-549127,https://reactome.org/PathwayBrowser/#/R-HSA-549127,Organic cation transport,TAS,Homo sapiens
+ENSG00000197241,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000197375,R-HSA-549127,https://reactome.org/PathwayBrowser/#/R-HSA-549127,Organic cation transport,TAS,Homo sapiens
+ENSG00000197496,R-HSA-189200,https://reactome.org/PathwayBrowser/#/R-HSA-189200,Cellular hexose transport,TAS,Homo sapiens
+ENSG00000197506,R-HSA-83936,https://reactome.org/PathwayBrowser/#/R-HSA-83936,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane,TAS,Homo sapiens
+ENSG00000197818,R-HSA-425986,https://reactome.org/PathwayBrowser/#/R-HSA-425986,Sodium/Proton exchangers,TAS,Homo sapiens
+ENSG00000197891,R-HSA-561048,https://reactome.org/PathwayBrowser/#/R-HSA-561048,Organic anion transport,TAS,Homo sapiens
+ENSG00000197901,R-HSA-561048,https://reactome.org/PathwayBrowser/#/R-HSA-561048,Organic anion transport,TAS,Homo sapiens
+ENSG00000197912,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000198125,R-HSA-8981607,https://reactome.org/PathwayBrowser/#/R-HSA-8981607,Intracellular oxygen transport,TAS,Homo sapiens
+ENSG00000198246,R-HSA-83936,https://reactome.org/PathwayBrowser/#/R-HSA-83936,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane,TAS,Homo sapiens
+ENSG00000198363,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000198523,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000198569,R-HSA-427589,https://reactome.org/PathwayBrowser/#/R-HSA-427589,Type II Na+/Pi cotransporters,TAS,Homo sapiens
+ENSG00000198626,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000198668,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000198668,R-HSA-425561,https://reactome.org/PathwayBrowser/#/R-HSA-425561,Sodium/Calcium exchangers,TAS,Homo sapiens
+ENSG00000198668,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000198670,R-HSA-8964041,https://reactome.org/PathwayBrowser/#/R-HSA-8964041,LDL remodeling,TAS,Homo sapiens
+ENSG00000198689,R-HSA-425986,https://reactome.org/PathwayBrowser/#/R-HSA-425986,Sodium/Proton exchangers,TAS,Homo sapiens
+ENSG00000198691,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000198743,R-HSA-429593,https://reactome.org/PathwayBrowser/#/R-HSA-429593,Inositol transporters,TAS,Homo sapiens
+ENSG00000198838,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000204308,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000204385,R-HSA-425366,https://reactome.org/PathwayBrowser/#/R-HSA-425366,"Transport of bile salts and organic acids, metal ions and amine compounds",TAS,Homo sapiens
+ENSG00000204574,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000205060,R-HSA-727802,https://reactome.org/PathwayBrowser/#/R-HSA-727802,Transport of nucleotide sugars,TAS,Homo sapiens
+ENSG00000206172,R-HSA-1237044,https://reactome.org/PathwayBrowser/#/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,TAS,Homo sapiens
+ENSG00000206172,R-HSA-1247673,https://reactome.org/PathwayBrowser/#/R-HSA-1247673,Erythrocytes take up oxygen and release carbon dioxide,TAS,Homo sapiens
+ENSG00000206190,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000213199,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000213398,R-HSA-8964058,https://reactome.org/PathwayBrowser/#/R-HSA-8964058,HDL remodeling,TAS,Homo sapiens
+ENSG00000213465,R-HSA-83936,https://reactome.org/PathwayBrowser/#/R-HSA-83936,Transport of nucleosides and free purine and pyrimidine bases across the plasma membrane,TAS,Homo sapiens
+ENSG00000213585,R-HSA-8949215,https://reactome.org/PathwayBrowser/#/R-HSA-8949215,Mitochondrial calcium ion transport,IEA,Homo sapiens
+ENSG00000213760,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000213760,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000215021,R-HSA-8949664,https://reactome.org/PathwayBrowser/#/R-HSA-8949664,Processing of SMDT1,TAS,Homo sapiens
+ENSG00000215695,R-HSA-549127,https://reactome.org/PathwayBrowser/#/R-HSA-549127,Organic cation transport,TAS,Homo sapiens
+ENSG00000215883,R-HSA-1237044,https://reactome.org/PathwayBrowser/#/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,TAS,Homo sapiens
+ENSG00000221946,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000221983,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000221983,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000221983,R-HSA-8866427,https://reactome.org/PathwayBrowser/#/R-HSA-8866427,VLDLR internalisation and degradation,TAS,Homo sapiens
+ENSG00000221983,R-HSA-917937,https://reactome.org/PathwayBrowser/#/R-HSA-917937,Iron uptake and transport,TAS,Homo sapiens
+ENSG00000224051,R-HSA-9845576,https://reactome.org/PathwayBrowser/#/R-HSA-9845576,Glycosphingolipid transport,TAS,Homo sapiens
+ENSG00000225697,R-HSA-427601,https://reactome.org/PathwayBrowser/#/R-HSA-427601,Multifunctional anion exchangers,TAS,Homo sapiens
+ENSG00000234906,R-HSA-8963888,https://reactome.org/PathwayBrowser/#/R-HSA-8963888,Chylomicron assembly,TAS,Homo sapiens
+ENSG00000234906,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,IEA,Homo sapiens
+ENSG00000234906,R-HSA-8963901,https://reactome.org/PathwayBrowser/#/R-HSA-8963901,Chylomicron remodeling,TAS,Homo sapiens
+ENSG00000234906,R-HSA-8964058,https://reactome.org/PathwayBrowser/#/R-HSA-8964058,HDL remodeling,TAS,Homo sapiens
+ENSG00000240583,R-HSA-1237044,https://reactome.org/PathwayBrowser/#/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,TAS,Homo sapiens
+ENSG00000240583,R-HSA-1247673,https://reactome.org/PathwayBrowser/#/R-HSA-1247673,Erythrocytes take up oxygen and release carbon dioxide,TAS,Homo sapiens
+ENSG00000240583,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000240583,R-HSA-432047,https://reactome.org/PathwayBrowser/#/R-HSA-432047,Passive transport by Aquaporins,TAS,Homo sapiens
+ENSG00000242616,R-HSA-432040,https://reactome.org/PathwayBrowser/#/R-HSA-432040,Vasopressin regulates renal water homeostasis via Aquaporins,TAS,Homo sapiens
+ENSG00000244734,R-HSA-1237044,https://reactome.org/PathwayBrowser/#/R-HSA-1237044,Erythrocytes take up carbon dioxide and release oxygen,TAS,Homo sapiens
+ENSG00000244734,R-HSA-1247673,https://reactome.org/PathwayBrowser/#/R-HSA-1247673,Erythrocytes take up oxygen and release carbon dioxide,TAS,Homo sapiens
+ENSG00000250565,R-HSA-917977,https://reactome.org/PathwayBrowser/#/R-HSA-917977,Transferrin endocytosis and recycling,TAS,Homo sapiens
+ENSG00000250565,R-HSA-983712,https://reactome.org/PathwayBrowser/#/R-HSA-983712,Ion channel transport,TAS,Homo sapiens
+ENSG00000256394,R-HSA-2672351,https://reactome.org/PathwayBrowser/#/R-HSA-2672351,Stimuli-sensing channels,TAS,Homo sapiens
+ENSG00000256870,R-HSA-428643,https://reactome.org/PathwayBrowser/#/R-HSA-428643,Organic anion transporters,TAS,Homo sapiens
+ENSG00000266964,R-HSA-936837,https://reactome.org/PathwayBrowser/#/R-HSA-936837,Ion transport by P-type ATPases,TAS,Homo sapiens
+ENSG00000267467,R-HSA-8866423,https://reactome.org/PathwayBrowser/#/R-HSA-8866423,VLDL assembly,TAS,Homo sapiens
+ENSG00000267467,R-HSA-8964046,https://reactome.org/PathwayBrowser/#/R-HSA-8964046,VLDL clearance,IEA,Homo sapiens
+ENSG00000267467,R-HSA-8964046,https://reactome.org/PathwayBrowser/#/R-HSA-8964046,VLDL clearance,TAS,Homo sapiens
+ENSG00000268104,R-HSA-352230,https://reactome.org/PathwayBrowser/#/R-HSA-352230,Amino acid transport across the plasma membrane,TAS,Homo sapiens
+ENSG00000268104,R-HSA-442660,https://reactome.org/PathwayBrowser/#/R-HSA-442660,Na+/Cl- dependent neurotransmitter transporters,TAS,Homo sapiens
+ENSG00000275903,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
+ENSG00000277494,R-HSA-8963889,https://reactome.org/PathwayBrowser/#/R-HSA-8963889,Assembly of active LPL and LIPC lipase complexes,TAS,Homo sapiens
+ENSG00000277494,R-HSA-8963901,https://reactome.org/PathwayBrowser/#/R-HSA-8963901,Chylomicron remodeling,TAS,Homo sapiens
+ENSG00000277791,R-HSA-382556,https://reactome.org/PathwayBrowser/#/R-HSA-382556,ABC-family proteins mediated transport,TAS,Homo sapiens
