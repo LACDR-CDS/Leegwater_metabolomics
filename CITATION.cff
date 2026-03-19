@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "Please cite the publication if you use this code, optionally together with this repository's Zenodo DOI."
+authors:
+  - family-names: Leegwater
+    given-names: Hanneke
+    affiliation: Leiden University
+    orcid: https://orcid.org/0000-0001-6003-1544
+  - family-names: Zhang
+	given-names: Xiaobing
+  - family-names: Huang
+	given-names: Luojiao
+  - family-names: Hoegen
+	given-names: Christine
+  - family-names: Wang
+	given-names: Xuesong
+  - family-names: Wegrzyn
+	given-names: Agnieszka B.
+  - family-names: Hankemeier
+	given-names: Thomas
+  - family-names: van de Water
+	given-names: Bob
+  - family-names: Danen
+	given-names: Erik
+  - family-names: Zweemer
+	given-names: Annelien J. M.
+  - family-names: Harms
+	given-names: Amy C.
+  - family-names: Le Dévédec
+	given-names: Sylvia E.
+title: "Code for: Multi-omics characterization of breast cancer metabolism identifies new metabolic targets"
+version: 0.1.0
+date-released: 2026-03-19
+identifiers: 
+      - type: doi
+        value: 10.64898/2026.03.06.710028
+license: MIT

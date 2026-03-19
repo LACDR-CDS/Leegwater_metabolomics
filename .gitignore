@@ -1,0 +1,35 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Ignore data and manuscript folder
+#data/*
+manuscript/*
+manuscript_biology/*
+*.html
+
+# Renv
+renv/library/*
+renv/staging/*
+
+########## Data that is not "my" data. ##############
+
+*brca_tcga_pan_can_atlas_2018*
+# The source is: 
+# brca_tcga_pan_can_atlas_2018, containing TCGA files on breast cancer
+# I used the between-sample-normalized RNA sequencing counts in data_RNA_Seq_v2_expression_median.txt
+# and metadata on molecular subtypes in data_clinical_patient.txt
+# Origin is https://www.cbioportal.org/datasets Breast Invasive Carcinoma (TCGA, PanCancer Atlas) with reference TCGA, Cell 2018 downloaded on 8-4-2021
+
+*Ensmbl2Reactome.txt
+*Ensembl2Reactome_All_Levels.txt
+# The source is:
+# Reactome, from https://reactome.org/download-data downloaded on 20-01-2025
+# And the Zenodo release v91 from Dec 2024 https://zenodo.org/records/14518331 downloaded on 20-01-2025
+
+*RNAseq_log2normalized_counts_celllines.csv
+*RNAseq_raw_counts_celllines.csv
+# The source is:
+# Koedoot et al. 2021 (PMID:33790333). 
+# I removed MDA-MB-435s since it is not a breast cancer cell line, normalized the data using DSeq2 and log2 transformed it.
