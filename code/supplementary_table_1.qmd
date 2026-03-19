@@ -1,0 +1,155 @@
+---
+title: "Supplementary Table 1"
+author: "Hanneke Leegwater"
+date: "`r Sys.Date()`"
+format: 
+  html:
+    self-contained: true
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    df-print: kable
+---
+
+## Template Used
+
+LACDR-ISA - Assay (General) v1.0.0
+
+## Title
+
+`r rmarkdown::metadata$title`
+
+## Date (dd-MM-yyyy)
+
+`r format(Sys.time(), format = "%d-%m-%Y")`
+
+## Description or Purpose
+
+To combine all omics data into an Excel Supplementary Table.
+
+### Data sources
+
+- Figure 1 amines
+- Figure 1 metabolite rates - scaled and unscaled
+- Figure 1 polar metabolites
+- Metadata on metabolite names
+- Metadata on samples
+
+### Analysis plan
+
+## Results
+
+### Preparations
+
+#### Load R libraries
+
+```{r}
+library(tidyverse)
+library(here)
+library(writexl)
+```
+
+#### Custom functions
+
+```{r}
+source(here("code/functions/helpers.R"))
+```
+
+#### Set input and output directories
+
+Show base path to the project that is used in the analysis.
+
+```{r}
+here()
+```
+
+Set output data directory and create if it does not exist.
+
+```{r}
+datestamp <- get_datestamp()
+output_dir <- set_output_dir(here("manuscript", str_glue("Tables_{datestamp}")))
+```
+### Load metadata
+
+```{r}
+cell_line_metadata <- read_csv(here("data/cell_line_metadata.csv")) |>
+  select(-Subtype_5_categories, -Subtype_3_categories)
+
+# Change dashes in cell line names into dots for use in figure 1.
+cell_line_metadata <- cell_line_metadata |>
+  mutate(cell.line = str_replace_all(group, "-", "."))
+
+dim(cell_line_metadata)
+head(cell_line_metadata)
+```
+
+```{r}
+omics_metadata <- list(
+  "metadata amines" = read_tsv(here("data/figure_1", 
+                           "m_LC-MS_negative_polar_metabolite_profiling_v2_maf.tsv")),
+  "metadata polar metabolomics" = read_tsv(here("data/figure_1",
+                                       "m_LC-MS_negative_polar_metabolite_profiling_v2_maf.tsv"))
+)
+```
+
+### Load data
+
+```{r}
+omics_datasets <- list(
+  "amines" = read_csv(here("data/figure_1", "amines.csv")) |>
+    column_to_rownames("amine_metabolite"),
+  "polar metabolomics" = read_csv(here("data/figure_1", "polar.csv")) |>
+    column_to_rownames("polar_metabolite"),
+  "metabolite rates unscaled" = read_csv(here("data/figure_1", "metabolite_rates_unscaled.csv")) |>
+    column_to_rownames("metabolite"),
+  "metabolite rates scaled Z-score" = read_csv(here("data/figure_1", "metabolite_rates.csv")) |>
+    column_to_rownames("metabolite"),
+  "metabolite rates scaled minmax" = read_csv(here("data/figure_2", "metabolite_rates_scaled_minmax.csv")) |>
+    column_to_rownames("metabolite")
+)
+# Keep cell lines measured in all datasets.
+(common_cell_lines <- lapply(omics_datasets, colnames) |>
+  reduce(intersect))
+
+cell_line_metadata <- cell_line_metadata |>
+  filter(cell.line %in% common_cell_lines)
+
+lapply(omics_datasets, dim)
+omics_datasets <- lapply(
+  omics_datasets,
+  function(df) select(df, all_of(common_cell_lines))
+)
+
+omics_datasets <- lapply(
+  omics_datasets,
+  function(df) rownames_to_column(df, "ID")
+)
+lapply(omics_datasets, dim)
+```
+
+### Quality control
+
+```{r}
+```
+
+
+### Write omics data to supplementary Table
+
+```{r}
+excel_sheets <- c(
+  omics_metadata,
+  list("metadata cell lines" = cell_line_metadata),
+  omics_datasets
+)
+write_xlsx(excel_sheets, here(output_dir, "Supplementary_Table_1.xlsx"))
+```
+
+## Conclusion
+
+## Additional information
+
+### Session info
+
+```{r}
+sessionInfo()
+```
