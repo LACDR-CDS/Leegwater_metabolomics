@@ -1,0 +1,259 @@
+---
+title: "Figure1"
+author: "Hanneke Leegwater"
+date: "`r Sys.Date()`"
+engine: knitr
+format: 
+  html:
+    self-contained: true
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    df-print: kable
+---
+
+## Template Used
+
+LACDR-ISA - Assay (General) v1.0.0
+
+## Title
+
+`r rmarkdown::metadata$title`
+
+## Date (dd-MM-yyyy)
+
+`r format(Sys.time(), format = "%d-%m-%Y")`
+
+## Description or Purpose
+
+Build Figure 1
+
+### Background
+
+### Data sources
+
+-   Cleaned, preprocessed, normalized, scaled omics data
+-   Metadata on cell line phenotypes
+
+### Analysis plan
+
+-   A: Explained variance after MOFA
+-   B: correlations with proliferation for factors of interest
+-   C: correlations with subtype for factors of interest
+-   D-E: weights/loadings of features for factors of interest
+-   F: Correlation glutamine and glutamate
+
+## Results
+
+### Preparations
+
+#### Load R libraries
+
+```{r}
+library(tidyverse)
+library(here)
+library(MOFA2)
+```
+
+#### Visualization settings for the report
+
+```{r}
+options(digits = 3) # visualizations of tables
+theme_set(theme_classic())
+```
+
+#### Custom functions
+
+```{r}
+source(here("code/functions/helpers.R"))
+```
+
+#### Set input and output directories
+
+Show base path to the project that is used in the analysis.
+
+```{r}
+here()
+```
+
+Set input and output data directory and create if it does not exist.
+
+```{r}
+datestamp <- get_datestamp()
+data_dir <- here("data", "figure_1")
+output_dir <- set_output_dir(here("manuscript", str_glue("Figure1_{datestamp}")))
+```
+
+### Figure 1A
+
+-   A: Explained variance after MOFA
+
+```{r}
+# Metadata on cell line names
+cell_line_metadata <- read_csv(here("data/cell_line_metadata.csv"))
+dim(cell_line_metadata)
+head(cell_line_metadata)
+
+# Change dashes in cell line names into dots for use in MOFA.
+cell_line_metadata <- cell_line_metadata |>
+  mutate(cell_line = str_replace_all(group, "-", "."))
+
+# Load data for integration
+omics_datasets <- list(
+  "amines" = read_csv(here(data_dir, "amines.csv")) |>
+    column_to_rownames("amine_metabolite"),
+  "polar metabolomics" = read_csv(here(data_dir, "polar.csv")) |>
+    column_to_rownames("polar_metabolite"),
+  "metabolite rates" = read_csv(here(data_dir, "metabolite_rates.csv")) |>
+    column_to_rownames("metabolite"),
+  "lipid classes" = read_csv(here(data_dir, "lipids.csv")) |>
+    column_to_rownames("lipid_metabolite"),
+  "pathways" = read_csv(here(data_dir, "pathway_scores.csv")) |>
+    column_to_rownames("pathway")
+)
+# Keep cell lines measured in all datasets.
+(common_cell_lines <- lapply(omics_datasets, colnames) |>
+  reduce(intersect))
+cell_line_metadata <- cell_line_metadata |>
+  filter(cell_line %in% common_cell_lines)
+
+lapply(omics_datasets, dim)
+omics_datasets <- lapply(
+  omics_datasets,
+  function(df) select(df, all_of(common_cell_lines))
+)
+lapply(omics_datasets, dim)
+
+# Convert to matrix for MOFA2
+omics_datasets <- lapply(omics_datasets, as.matrix)
+names(omics_datasets)
+
+# Prepare MOFA
+MOFA_object <- create_mofa(omics_datasets)
+print(MOFA_object)
+plot_data_overview(MOFA_object)
+
+# Define options
+data_opts <- get_default_data_options(MOFA_object)
+head(data_opts)
+model_opts <- get_default_model_options(MOFA_object)
+model_opts$num_factors <- 8
+head(model_opts)
+train_opts <- get_default_training_options(MOFA_object)
+head(train_opts)
+
+# Build MOFA Object
+MOFA_object <- prepare_mofa(
+  object = MOFA_object,
+  data_options = data_opts,
+  model_options = model_opts,
+  training_options = train_opts
+)
+
+# Run MOFA
+outfile <- here(output_dir, "Figure1A_MOFA_model.hdf5")
+reticulate::use_condaenv("mofa_env")
+MOFA_object_trained <- run_mofa(MOFA_object, outfile)
+```
+
+### Figure 1B-C
+
+-   B: correlations with proliferation for factors 1, 2, and 7
+-   C: correlations with subtype for factors 1, 2, and 7
+
+And in main text: ANOVA with subtype and factor.
+
+```{r}
+factors <- get_factors(MOFA_object_trained, as.data.frame = TRUE) |>
+  pivot_wider(names_from = factor, values_from = value) |>
+  left_join(cell_line_metadata, by = c("sample" = "cell_line")) |>
+  rename(cell_line = sample)
+
+dim(factors)
+head(factors)
+factors |>
+  write_csv(here(output_dir, "Figure1BC.csv"))
+```
+
+Note that it is not corrected for multiple testing:
+
+```{r}
+for (factor in 1:8) {
+  print(str_glue("*****Correlation proliferation for Factor{factor}*****"))
+  cor_nr <- cor(
+    factors[["ProliferationRate"]],
+    factors[[str_glue("Factor{factor}")]],
+    method = "spearman", use = "pairwise.complete.obs"
+  )
+  print(cor_nr)
+  result <- lm(
+    as.formula(str_glue("Factor{factor} ~ ProliferationRate")),
+    data = factors
+  )
+  print(summary(result))
+}
+```
+
+```{r}
+for (factor in 1:8) {
+  print(str_glue("*****ANOVA for Factor{factor}*****"))
+  result <- lm(
+    as.formula(str_glue("Factor{factor} ~ Subtype_4_categories")),
+    data = factors
+  )
+  anova_result <- anova(result)
+  print(anova_result)
+  print(summary(result))
+}
+```
+
+### Figure 1D-E
+
+-   D-E: weights/loadings of features for factors 1, 2, and in supplementary: 7
+
+```{r}
+weights <- get_weights(MOFA_object_trained, as.data.frame = TRUE) |>
+  pivot_wider(names_from = factor, values_from = value)
+dim(weights)
+head(weights)
+
+weights |>
+  write_csv(here(output_dir, "Figure1DE.csv"))
+```
+
+### Figure 1F
+
+Show glutamine-glutamate in a different unit.
+
+```{r}
+metabolite_rates_unscaled <- read_csv(here(
+  data_dir,
+  "metabolite_rates_unscaled.csv"
+)) |>
+  pivot_longer(-metabolite, names_to = "cell_line", values_to = "value") |>
+  pivot_wider(
+    id_cols = cell_line,
+    names_from = metabolite, values_from = value
+  ) |>
+  select(cell_line, `Glutamine rate`, `Glutamic acid rate`) |>
+  # Convert glutamine uptake to a release rate
+  mutate(`Glutamine rate` = `Glutamine rate` * -1) |>
+  rename(
+    `Glutamine uptake (µm/gDw/h)` = `Glutamine rate`,
+    `Glutamic acid secretion (µm/gDw/h)` = `Glutamic acid rate`
+  )
+
+write_csv(metabolite_rates_unscaled, here(output_dir, "Figure1F.csv"))
+```
+
+## Conclusion
+
+Data for Figure 1 was processed and put in a separate folder.
+
+## Additional information
+
+### Session info
+
+```{r}
+sessionInfo()
+```

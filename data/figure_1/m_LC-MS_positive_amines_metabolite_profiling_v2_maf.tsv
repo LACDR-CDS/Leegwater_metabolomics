@@ -1,0 +1,51 @@
+database_identifier	metabolite_identification	internal_identifiers	identifiers	HMDB	PubChem	ChEBI	KEGG
+CHEBI:172453	3-Methoxytyrosine	3-Methoxytyrosine	3-Methoxytyrosine	HMDB0001434	1670	172453	
+CHEBI:17780	5-Hydroxy-L-tryptophan	5-Hydroxy-L-tryptophan	5-Hydroxy-L-tryptophan	HMDB0000472	439280	17780	C00643
+CHEBI:16349	Citrulline	Citrulline	Citrulline	HMDB0000904	9750	16349	C00327
+CHEBI:17482	L-Cystathionine	Cystathionine	Cystathionine	HMDB0000099	439258	17482	C02291
+CHEBI:17561	L-Cysteine	Cysteine	Cysteine	HMDB0000574	5862	17561	C00097
+CHEBI:27389	3-Aminoisobutanoic acid	DL-3-aminoisobutyric acid	3-Aminoisobutanoic acid	HMDB0003911	64956	27389	C05145
+CHEBI:16865	gamma-Aminobutyric acid	Gamma-aminobutyric acid	Gamma-aminobutyric acid	HMDB0000112	119	16865	C00334
+CHEBI:16856	Glutathione	Glutathione	Glutathione	HMDB0000125	124886	16856	C00051
+CHEBI:15428	Glycine	Glycine	Glycine	HMDB0000123	750	15428	C00037
+CHEBI:17201	Glycylglycine	Glycylglycine	Glycylglycine	HMDB0011733	11163	17201	C02037
+CHEBI:17443	Homocitrulline	Homocitrulline	Homocitrulline	HMDB0000679	65072	17443	C02427
+CHEBI:17588	Homocysteine	Homocysteine	Homocysteine	HMDB0000742	91552	17588	C00155
+CHEBI:18040	5-Hydroxylysine	Hydroxylysine	Hydroxylysine	HMDB0000450	3032849	18040	C16741
+CHEBI:37023	Aminoadipic acid	L-2-aminoadipic acid	Aminoadipic acid	HMDB0000510	92136	37023	C00956
+CHEBI:20392	L-Hydroxyproline	L-4-hydroxy-proline	Hydroxyproline	HMDB0000725	5810	20392	C01157
+CHEBI:16977	L-Alanine	L-Alanine	Alanine	HMDB0000161	5950	16977	C00041
+CHEBI:35619	L-alpha-Aminobutyric acid	L-Alpha-aminobutyric acid	Alpha-aminobutyric acid	HMDB0000452	80283	35619	C02356
+CHEBI:16467	L-Arginine	L-Arginine	Arginine	HMDB0000517	6322	16467	C00062
+CHEBI:17196	L-Asparagine	L-Asparagine	Asparagine	HMDB0000168	6267	17196	C00152
+CHEBI:17053	L-Aspartic acid	L-Aspartic acid	Aspartic acid	HMDB0000191	5960	17053	C00049
+CHEBI:15727	Carnosine	L-Carnosine	Carnosine	HMDB0000033	439224	15727	C00386
+CHEBI:16015	Glutamic acid	L-Glutamic acid	Glutamic acid	HMDB0000148	33032	16015	C00025
+CHEBI:18050	Glutamine	L-Glutamine	Glutamine	HMDB0000641	5961	18050	C00064
+CHEBI:15971	Histidine	L-Histidine	Histidine	HMDB0000177	6274	15971	C00135
+CHEBI:17191	Isoleucine	L-Isoleucine	Isoleucine	HMDB0000172	6306	17191	C00407
+CHEBI:16946	Kynurenine	L-Kynurenine	Kynurenine	HMDB0000684	161166	16946	C00328
+CHEBI:15603	Leucine	L-Leucine	Leucine	HMDB0000687	6106	15603	C00123
+CHEBI:18019	Lysine	L-Lysine	Lysine	HMDB0000182	5962	18019	C00047
+CHEBI:16643	Methionine	L-Methionine	Methionine	HMDB0000696	6137	16643	C00073
+CHEBI:17295	Phenylalanine	L-Phenylalanine	Phenylalanine	HMDB0000159	6140	17295	C00079
+CHEBI:17203	Proline	L-Proline	Proline	HMDB0000162	145742	17203	C00148
+CHEBI:17115	Serine	L-Serine	Serine	HMDB0000187	5951	17115	C00065
+CHEBI:16857	L-Threonine	L-Threonine	Threonine	HMDB0000167	6288	16857	C00188
+CHEBI:16828	L-Tryptophan	L-Tryptophan	Tryptophan	HMDB0000929	6305	16828	C00078
+CHEBI:17895	L-Tyrosine	L-Tyrosine	Tyrosine	HMDB0000158	6057	17895	C00082
+CHEBI:16414	L-Valine	L-Valine	Valine	HMDB0000883	6287	16414	C00183
+CHEBI:21363	Methionine sulfone	Methionine sulfone	Methionine sulfone	HMDB0062174	445282	21363	
+CHEBI:17553	O-Phosphoethanolamine	O-Phosphoethanolamine	O-Phosphoethanolamine	HMDB0000224	1015	17553	C00346
+CHEBI:15729	Ornithine	Ornithine	Ornithine	HMDB0000214	6262	15729	C00077
+CHEBI:17148	Putrescine	Putrescine	Putrescine	HMDB0001414	1045	17148	C00134
+CHEBI:45658	Methylcysteine	S-Methylcysteine	Methylcysteine	HMDB0002108	24417	45658	C22040
+CHEBI:15611	Sarcosine	Sarcosine	Sarcosine	HMDB0000271	1088	15611	C00213
+CHEBI:28790	Serotonin	Serotonine	Serotonin	HMDB0000259	5202	28790	C00780
+CHEBI:15891	Taurine	Taurine	Taurine	HMDB0000251	1123	15891	C00245
+CHEBI:17549	5-Aminolevulinic acid	5-Aminolevulinic acid	5-Aminolevulinic acid	HMDB0001149	137	17549	C00430
+CHEBI:16958	beta-Alanine	Beta-Alanine	Beta-Alanine	HMDB0000056	239	16958	C00099
+CHEBI:16000	Ethanolamine	Ethanolamine	Ethanolamine	HMDB0000149	700	16000	C00189
+CHEBI:70744	Glycylproline	Glycylproline	Glycylproline	HMDB0000721	3013625	70744	
+CHEBI:17016	Methionine sulfoxide	L-Methionine sulfoxide	Methionine sulfoxide	HMDB0002005	158980	17016	C02989
+CHEBI:25682	Symmetric dimethylarginine	SDMA	SDMA	HMDB0003334	169148	25682	
