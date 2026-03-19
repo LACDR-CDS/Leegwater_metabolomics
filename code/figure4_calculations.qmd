@@ -1,0 +1,433 @@
+---
+title: "Figure4"
+author: "Hanneke Leegwater"
+date: "`r Sys.Date()`"
+format: 
+  html:
+    self-contained: true
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    df-print: kable
+---
+
+## Template Used
+
+LACDR-ISA - Assay (General) v1.0.0
+
+## Title
+
+`r rmarkdown::metadata$title`
+
+## Date (dd-MM-yyyy)
+
+`r format(Sys.time(), format = "%d-%m-%Y")`
+
+## Description or Purpose
+
+Build Figure 4
+
+### Data sources
+
+-   siRNA results
+
+### Analysis plan
+
+Show the screen results
+
+## Results
+
+### Preparations
+
+#### Load R libraries
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+#### Visualization settings for the report
+
+```{r}
+options(digits = 3) # visualizations of tables
+theme_set(theme_classic())
+```
+
+#### Custom functions
+
+```{r}
+source(here("code/functions/helpers.R"))
+```
+
+#### Set input and output directories
+
+Show base path to the project that is used in the analysis.
+
+```{r}
+here()
+```
+
+Set input and output data directory and create if it does not exist.
+
+```{r}
+datestamp <- get_datestamp()
+data_dir <- here("data", "figure_4")
+output_dir <- set_output_dir(here("manuscript", str_glue("Figure4_{datestamp}")))
+```
+
+### Figure 4
+
+#### The targets we selected for the screen:
+
+```{r}
+metabolic_targets <- read_csv(here(
+  "manuscript", str_glue("Figure3_{datestamp}"),
+  "metabolic_targets.csv"
+))
+
+table(metabolic_targets$selection_siRNA)
+
+metabolic_targets <- filter(metabolic_targets, selection_siRNA == "selected")
+dim(metabolic_targets)
+head(metabolic_targets)
+
+table(metabolic_targets$selection_siRNA)
+
+target_selection <- c(
+  c("mock", "KP control"),
+  c("ITGB1", "bosutinib"),
+  "flavopiridol",
+  metabolic_targets$gene_symbol
+)
+length(target_selection)
+```
+
+#### The siRNA results - proliferation:
+
+```{r}
+proliferation <- read_csv(here(data_dir, "proliferation_siRNA_screen.csv"))
+dim(proliferation)
+head(proliferation)
+
+proliferation <- proliferation |>
+  rowwise() |>
+  mutate(
+    mean_prol = mean(c(rep1, rep2, rep3)),
+    sd_prol = sd(c(rep1, rep2, rep3)),
+    SEM_prol = sd_prol / sqrt(3)
+  )
+
+# Sort to have controls on the left
+proliferation <- proliferation |>
+  mutate(is_control = case_when(
+    target %in% c("mock", "KP control") ~ "siRNA control",
+    target %in% c("ITGB1", "bosutinib") ~ "migration positive control",
+    target == "flavopiridol" ~ "proliferation positive control",
+    TRUE ~ "candidate"
+  )) |>
+  mutate(is_control = factor(
+    is_control,
+    levels = c(
+      "siRNA control", "migration positive control",
+      "proliferation positive control", "candidate"
+    )
+  )) |>
+  arrange(is_control, mean_prol)
+
+table(proliferation$is_control)
+# Print all targets with at least a 20% change in proliferation
+proliferation |>
+  filter(mean_prol > 1.2)
+
+proliferation |>
+  filter(mean_prol < 0.8)
+
+proliferation |>
+  filter(mean_prol < 0.5)
+```
+
+#### The siRNA results - migration:
+
+```{r}
+migration <- read_csv(here(data_dir, "migration_siRNA_screen_um_h.csv"))
+dim(migration)
+head(migration)
+
+migration <- migration |>
+  rowwise() |>
+  mutate(
+    mean_migration = mean(c(rep1, rep2, rep3)),
+    sd_migration = sd(c(rep1, rep2, rep3)),
+    SEM_migration = sd_migration / sqrt(3)
+  )
+
+# Sort to have controls on the left
+migration <- migration |>
+  mutate(is_control = case_when(
+    target %in% c("mock", "KP control") ~ "siRNA control",
+    target %in% c("ITGB1", "bosutinib") ~ "migration positive control",
+    target == "flavopiridol" ~ "proliferation positive control",
+    TRUE ~ "candidate"
+  )) |>
+  mutate(is_control = factor(
+    is_control,
+    levels = c(
+      "siRNA control", "migration positive control",
+      "proliferation positive control", "candidate"
+    )
+  )) |>
+  arrange(is_control, mean_migration)
+
+dim(migration)
+table(migration$is_control)
+setdiff(target_selection, migration$target)
+
+# Print all targets with ~ at least a 20% change in migration
+migration_mock <- migration |>
+  filter(target == "mock") |>
+  pull(mean_migration)
+migration_mock
+migration |>
+  filter(mean_migration > migration_mock * 1.2)
+
+migration |>
+  filter(mean_migration < migration_mock * 0.8)
+```
+
+#### The siRNA results - SRB proliferation:
+
+```{r}
+proliferation_SRB <- read_csv(here(data_dir, "cell_viability_SRB_siRNA_screen_percentage.csv"))
+dim(proliferation_SRB)
+head(proliferation_SRB)
+
+proliferation_SRB <- proliferation_SRB |>
+  rowwise() |>
+  mutate(
+    mean_proliferation_SRB = mean(c(rep1, rep2, rep3)),
+    sd_proliferation_SRB = sd(c(rep1, rep2, rep3)),
+    SEM_proliferation_SRB = sd_proliferation_SRB / sqrt(3)
+  )
+
+# Sort to have controls on the left
+proliferation_SRB <- proliferation_SRB |>
+  mutate(is_control = case_when(
+    target %in% c("mock", "KP control") ~ "siRNA control",
+    target %in% c("ITGB1", "bosutinib") ~ "migration positive control",
+    target == "flavopiridol" ~ "proliferation positive control",
+    TRUE ~ "candidate"
+  )) |>
+  mutate(is_control = factor(
+    is_control,
+    levels = c(
+      "siRNA control", "migration positive control",
+      "proliferation positive control", "candidate"
+    )
+  )) |>
+  arrange(is_control, mean_proliferation_SRB)
+
+# Print all targets with ~ at least a 20% change in proliferation_SRB
+proliferation_SRB |>
+  filter(mean_proliferation_SRB > 120)
+
+proliferation_SRB |>
+  filter(mean_proliferation_SRB < 80)
+
+proliferation_SRB |>
+  filter(mean_proliferation_SRB < 50)
+```
+
+### Calculate which genes changed significantly
+
+Because of the correction compared to the mock, the question is for each target whether its value is significantly different from 1.
+
+```{r}
+check_difference_from_mock <- function(df, verbose = FALSE) {
+  mock_value <- df |>
+    filter(target == "mock") |>
+    summarize(mean(rep1, rep2, rep3)) |>
+    pull()
+
+  df <- df |>
+    rowwise() |>
+    mutate(
+      p.value = ifelse(target == "mock", 1,
+        t.test(x = c(rep1, rep2, rep3), mu = mock_value)$p.value
+      )
+    )
+  # correct for multiple testing
+  df$padj <- p.adjust(df$p.value, method = "BH")
+
+  df <- df |>
+    rowwise() |>
+    mutate(
+      significant_hit = ifelse(is_control == "candidate",
+        ifelse(padj < 0.1, "FDR < 0.1", "not significant"), as.character(is_control)
+      )
+    )
+
+  if (verbose) {
+    print(str_glue("Mock value is {mock_value}"))
+    print(str_glue("Nr of significant differences (p.value) with p < 0.05 is {sum(df$p.value < 0.05)}"))
+    print(str_glue("Nr of significant differences (FDR) with FDR < 0.1 is {sum(df$padj < 0.1)}"))
+    return(df)
+  }
+}
+
+proliferation <- check_difference_from_mock(proliferation, verbose = TRUE)
+proliferation |>
+  arrange(padj) |>
+  head()
+
+migration <- check_difference_from_mock(migration, verbose = TRUE)
+migration |>
+  arrange(padj) |>
+  head()
+
+proliferation_SRB <- check_difference_from_mock(proliferation_SRB, verbose = TRUE)
+proliferation_SRB |>
+  arrange(padj) |>
+  head()
+```
+
+#### Write to file
+
+```{r}
+proliferation |>
+  write_csv(here(output_dir, "proliferation.csv"))
+migration |>
+  write_csv(here(output_dir, "migration.csv"))
+proliferation_SRB |>
+  write_csv(here(output_dir, "proliferation_SRB.csv"))
+```
+
+### Select hits
+
+```{r}
+candidates <- inner_join(
+  proliferation |>
+    select(target, is_control, mean_prol, padj) |>
+    mutate(
+      proliferation_candidate = mean_prol < 0.8 & padj < 0.1,
+      proliferation_50p_reduction = mean_prol < 0.50 & padj < 0.1
+    ),
+  migration |>
+    select(target, mean_migration, padj) |>
+    mutate(migration_candidate = mean_migration < migration_mock * 0.8 & padj < 0.1),
+  by = "target", suffix = c("_prol", "_migration")
+) |>
+  inner_join(
+    proliferation_SRB |>
+      select(target, mean_proliferation_SRB, padj) |>
+      mutate(
+        proliferation_SRB_candidate = mean_proliferation_SRB < 80 & padj < 0.1,
+        proliferation_SRB_50p_reduction = mean_proliferation_SRB < 50 & padj < 0.1
+      ) |>
+      rename(padj_proliferation_SRB = padj),
+    by = "target"
+  )
+
+candidates |>
+  ggplot(aes(
+    x = mean_prol, y = mean_proliferation_SRB,
+    color = str_c(proliferation_candidate, proliferation_SRB_candidate)
+  )) +
+  geom_point() +
+  geom_abline(slope = 100, intercept = 0)
+
+cor(candidates$mean_prol, candidates$mean_proliferation_SRB, method = "spearman")
+candidates |>
+  filter(
+    proliferation_candidate &
+      migration_candidate &
+      proliferation_SRB_candidate
+  )
+```
+
+Count the number of proliferation-reducing targets:
+
+```{r}
+candidates |>
+  filter(is_control == "candidate") |>
+  select(proliferation_candidate, proliferation_SRB_candidate) |>
+  table()
+
+candidates |>
+  filter(is_control == "candidate") |>
+  select(proliferation_50p_reduction, proliferation_SRB_50p_reduction) |>
+  table()
+```
+
+Count the number of migration-reducing targets:
+
+```{r}
+candidates |>
+  filter(is_control == "candidate") |>
+  pull(migration_candidate) |>
+  table()
+```
+
+```{r}
+candidates |>
+  filter(is_control == "candidate") |>
+  select(proliferation_candidate, proliferation_SRB_candidate) |>
+  table()
+```
+
+```{r}
+candidates |>
+  filter(is_control == "candidate") |>
+  select(
+    proliferation_50p_reduction,
+    proliferation_SRB_50p_reduction,
+    migration_candidate
+  ) |>
+  table()
+```
+
+Only migration, no proliferation
+
+```{r}
+candidates |>
+  filter(
+    migration_candidate &
+      !proliferation_candidate &
+      !proliferation_SRB_candidate
+  )
+
+candidates |>
+  filter(
+    migration_candidate &
+      !proliferation_50p_reduction &
+      !proliferation_SRB_50p_reduction
+  )
+```
+
+Migration and proliferation
+
+```{r}
+candidates |>
+  filter(
+    migration_candidate &
+      proliferation_50p_reduction &
+      proliferation_SRB_50p_reduction
+  )
+```
+
+```{r}
+candidates |>
+  left_join(metabolic_targets, by = c("target" = "gene_symbol")) |>
+  write_csv(here(output_dir, "candidates.csv"))
+```
+
+## Conclusion
+
+Statistics for in the manuscript, and data for Figure 4 are ready.
+
+## Additional information
+
+### Session info
+
+```{r}
+sessionInfo()
+```

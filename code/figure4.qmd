@@ -1,0 +1,312 @@
+---
+title: "Figure4"
+author: "Hanneke Leegwater"
+date: "`r Sys.Date()`"
+format: 
+  html:
+    self-contained: true
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    df-print: kable
+---
+
+## Template Used
+
+LACDR-ISA - Assay (General) v1.0.0
+
+## Title
+
+`r rmarkdown::metadata$title`
+
+## Date (dd-MM-yyyy)
+
+`r format(Sys.time(), format = "%d-%m-%Y")`
+
+## Description or Purpose
+
+Build Figure 4
+
+### Background
+
+### Data sources
+
+-   Results from the siRNA screen
+
+### Analysis plan
+
+Show effect of targets on cell migration and cell proliferation
+
+## Results
+
+### Preparations
+
+#### Load R libraries
+
+```{r}
+library(tidyverse)
+library(here)
+library(cowplot)
+library(ggrepel)
+```
+
+#### Visualization settings for the report
+
+```{r}
+options(digits = 3) # visualizations of tables
+theme_set(theme_classic())
+```
+
+#### Custom functions
+
+```{r}
+source(here("code/functions/helpers.R"))
+source(here("code/functions/figure_helpers.R"))
+source(here("code/functions/color_scales.R"))
+```
+
+#### Set input and output directories
+
+Show base path to the project that is used in the analysis.
+
+```{r}
+here()
+```
+
+Set output data directory and create if it does not exist.
+
+```{r}
+datestamp <- get_datestamp()
+output_dir <- set_output_dir(here("manuscript", str_glue("Figure4_{datestamp}")))
+```
+
+Make lines in plots a bit bigger
+
+```{r}
+geom_point <- function(...) {
+  ggplot2::geom_point(..., size = 2)
+}
+geom_hline <- function(...) {
+  ggplot2::geom_hline(..., size = 0.5)
+}
+geom_errorbar <- function(...) {
+  ggplot2::geom_errorbar(..., size = 0.5)
+}
+```
+
+### Load data
+
+```{r}
+read_dataset <- function(file_path) {
+  df <- read_csv(file_path,
+    col_types = cols(
+      is_control = col_factor(levels = control_levels),
+      significant_hit = col_factor(levels = significant_hit_levels)
+    )
+  )
+  print(dim(df))
+  print(head(df))
+  print(table(df$is_control))
+  return(df)
+}
+control_levels <- c(
+  "siRNA control", "migration positive control",
+  "proliferation positive control", "candidate"
+)
+significant_hit_levels <- c(control_levels, "not significant", "FDR < 0.1")
+proliferation <- read_dataset(here(output_dir, "proliferation.csv"))
+migration <- read_dataset(here(output_dir, "migration.csv"))
+proliferation_SRB <- read_dataset(here(output_dir, "proliferation_SRB.csv"))
+```
+
+### Figure 4A
+
+```{r fig.height=14/2.54, fig.width=18/2.54}
+make_proliferation_SRB_plot <- function(df) {
+  min_SRB <- min(df$mean_proliferation_SRB)
+  p <- df |>
+    # the background
+    ggplot(aes(x = target, y = mean_proliferation_SRB, color = significant_hit)) +
+    geom_hline(yintercept = 100, linetype = "dashed") +
+    geom_hline(yintercept = 80, linetype = "dashed", color = "grey") +
+    geom_hline(yintercept = 50, linetype = "dashed", color = "grey") +
+    geom_hline(yintercept = 0, color = "grey30") +
+    labs(x = NULL, y = "Relative proliferation SRB", color = NULL) +
+    theme(
+      legend.position = "bottom",
+      axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, size = 6)
+    ) +
+    annotate("text", x = Inf, y = 80, label = "80%", hjust = 1.1, vjust = 1.1, color = "grey") +
+    annotate("text", x = Inf, y = 50, label = "50%", hjust = 1.1, vjust = 1.1, color = "grey") +
+    # the data
+    geom_point() +
+    geom_errorbar(aes(
+      ymin = ifelse(
+        mean_proliferation_SRB - SEM_proliferation_SRB < min_SRB, 
+        min_SRB, 
+        mean_proliferation_SRB - SEM_proliferation_SRB
+      ),
+      ymax = mean_proliferation_SRB + SEM_proliferation_SRB
+    ), width = 0.2) +
+    scale_color_manual(values = siRNA_colors)
+}
+
+# Sort by proliferation decrease
+figure_4a <- proliferation_SRB |>
+  mutate(target = factor(target, levels = unique(proliferation_SRB$target))) |>
+  make_proliferation_SRB_plot()
+figure_4a
+
+proliferation_SRB |>
+  # Sort by migration speed reduction
+  mutate(target = factor(target, levels = unique(migration$target))) |>
+  make_proliferation_SRB_plot()
+
+target_order <- proliferation_SRB |>
+  arrange(is_control, target) |>
+  pull(target)
+proliferation_SRB |>
+  # Sort by alphabetical
+  mutate(target = factor(target, levels = target_order)) |>
+  make_proliferation_SRB_plot()
+
+save_plot(here(output_dir, "figure_4a.png"), figure_4a, base_height = 2 / 3 * page_height, base_width = page_width)
+```
+
+### Figure 4B
+
+```{r}
+make_proliferation_plot <- function(df) {
+  p <- df |>
+    ggplot(aes(x = target, y = mean_prol, color = significant_hit)) +
+    annotate("text", x = Inf, y = 0.8, label = "80%", hjust = 1.1, vjust = 1.1, color = "grey") +
+    annotate("text", x = Inf, y = 0.5, label = "50%", hjust = 1.1, vjust = 1.1, color = "grey") +
+    geom_hline(yintercept = 1, linetype = "dashed") +
+    geom_hline(yintercept = 0.8, linetype = "dashed", color = "grey") +
+    geom_hline(yintercept = 0.5, linetype = "dashed", color = "grey") +
+    geom_hline(yintercept = 0, color = "grey30") +
+    scale_y_continuous(limits = c(0, NA), breaks = seq(0, max(proliferation$mean_prol) + 0.2, 0.2)) +
+    labs(x = NULL, y = "Relative proliferation - confluency", color = NULL) +
+    geom_point() +
+    geom_errorbar(aes(
+      ymin = ifelse(mean_prol - SEM_prol < 0, 0, mean_prol - SEM_prol),
+      ymax = mean_prol + SEM_prol
+    ), width = 0.2) +
+    scale_color_manual(values = siRNA_colors) +
+    theme(
+      legend.position = "bottom",
+      axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, size = 6)
+    )
+  return(p)
+}
+
+# Sort by proliferation decrease
+proliferation |>
+  mutate(target = factor(target, levels = unique(proliferation$target))) |>
+  make_proliferation_plot()
+
+figure_4b <- proliferation |>
+  # Sort by SRB proliferation decrease
+  mutate(target = factor(target, levels = unique(proliferation_SRB$target))) |>
+  make_proliferation_plot()
+figure_4b
+
+target_order <- proliferation |>
+  arrange(is_control, target) |>
+  pull(target)
+proliferation |>
+  # Sort by alphabetical
+  mutate(target = factor(target, levels = target_order)) |>
+  make_proliferation_plot()
+```
+
+
+```{r}
+save_plot(here(output_dir, "figure_4b.png"), figure_4b, base_height = 2 / 3 * page_height, base_width = page_width)
+```
+
+### Figure 4C
+
+Compare to the value of migration speed of the mock control:
+
+```{r}
+migration_mock <- migration |>
+  filter(target == "mock") |>
+  pull(mean_migration)
+migration_mock
+```
+
+```{r}
+make_migration_plot <- function(df) {
+  p <- df |>
+    ggplot(aes(x = target, y = mean_migration, color = significant_hit)) +
+    geom_hline(yintercept = migration_mock, linetype = "dashed") +
+    geom_hline(yintercept = 0.8 * migration_mock, linetype = "dashed", color = "grey") +
+    geom_hline(yintercept = 0, color = "grey30") +
+    scale_y_continuous(limits = c(0, NA)) + # , breaks = seq(0,max(migration$mean_migration) + 0.2, 0.2)) +
+    labs(x = NULL, y = "Migration speed (µm/h)", color = NULL) +
+    theme(
+      legend.position = "bottom",
+      axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, size = 6)
+    ) +
+    annotate("text", x = Inf, y = 0.8 * migration_mock, label = "80%", hjust = 1.1, vjust = 1.1, color = "grey") +
+    geom_point() +
+    geom_errorbar(aes(
+      ymin = ifelse(mean_migration - SEM_migration < 0, 0, mean_migration - SEM_migration),
+      ymax = mean_migration + SEM_migration
+    ), width = 0.2) +
+    scale_color_manual(values = siRNA_colors)
+  return(p)
+}
+# Sort by migration decrease
+migration |>
+  mutate(target = factor(target, levels = unique(migration$target))) |>
+  make_migration_plot()
+
+figure_4c <- migration |>
+  # Sort by SRB proliferation decrease
+  mutate(target = factor(target, levels = unique(proliferation_SRB$target))) |>
+  make_migration_plot()
+figure_4c
+
+target_order <- migration |>
+  arrange(is_control, target) |>
+  pull(target)
+
+migration |>
+  # Sort by alphabetical
+  mutate(target = factor(target, levels = target_order)) |>
+  make_migration_plot()
+
+figure_4c
+save_plot(here(output_dir, "figure_4c.png"), figure_4c, base_height = 2 / 3 * page_height, base_width = page_width)
+```
+### Figure 4
+
+```{r fig.height=14/2.54, fig.width=18/2.54}
+figure_4 <- plot_grid(
+  figure_4a + theme(legend.position = "none", axis.title.y = element_text(hjust = 0.3)),
+  figure_4b + theme(legend.position = "none", axis.title.y = element_text(hjust = -0.2)),
+  figure_4c + theme(axis.title.y = element_text(hjust = 0.2)),
+  labels = LETTERS[1:3],
+  ncol = 1
+)
+figure_4
+```
+
+```{r}
+(output_file <- here(output_dir, "Figure_4.png"))
+save_plot(output_file, figure_4, base_height = 0.8 * page_height, base_width = page_width)
+```
+
+## Conclusion
+
+Figure 4 is ready.
+
+## Additional information
+
+### Session info
+
+```{r}
+sessionInfo()
+```
