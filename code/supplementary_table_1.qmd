@@ -72,12 +72,7 @@ output_dir <- set_output_dir(here("manuscript", str_glue("Tables_{datestamp}")))
 ### Load metadata
 
 ```{r}
-cell_line_metadata <- read_csv(here("data/cell_line_metadata.csv")) |>
-  select(-Subtype_5_categories, -Subtype_3_categories)
-
-# Change dashes in cell line names into dots for use in figure 1.
-cell_line_metadata <- cell_line_metadata |>
-  mutate(cell.line = str_replace_all(group, "-", "."))
+cell_line_metadata <- read_csv(here("data/cell_line_metadata.csv"))
 
 dim(cell_line_metadata)
 head(cell_line_metadata)
@@ -86,7 +81,7 @@ head(cell_line_metadata)
 ```{r}
 omics_metadata <- list(
   "metadata amines" = read_tsv(here("data/figure_1", 
-                           "m_LC-MS_negative_polar_metabolite_profiling_v2_maf.tsv")),
+                           "m_LC-MS_positive_amines_metabolite_profiling_v2_maf.tsv")),
   "metadata polar metabolomics" = read_tsv(here("data/figure_1",
                                        "m_LC-MS_negative_polar_metabolite_profiling_v2_maf.tsv"))
 )
@@ -112,7 +107,7 @@ omics_datasets <- list(
   reduce(intersect))
 
 cell_line_metadata <- cell_line_metadata |>
-  filter(cell.line %in% common_cell_lines)
+  filter(cell_line %in% common_cell_lines)
 
 lapply(omics_datasets, dim)
 omics_datasets <- lapply(
@@ -126,12 +121,6 @@ omics_datasets <- lapply(
 )
 lapply(omics_datasets, dim)
 ```
-
-### Quality control
-
-```{r}
-```
-
 
 ### Write omics data to supplementary Table
 

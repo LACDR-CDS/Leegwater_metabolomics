@@ -93,7 +93,23 @@ output_dir <- set_output_dir(here("manuscript", str_glue("Figure1_{datestamp}"))
 It is adapted from MOFA2::plot_variance_explained, to allow different font sizes.
 
 ```{r}
-MOFAobject.trained <- load_model(here(output_dir, "Figure1A_MOFA_model.hdf5"))
+MOFAobject.trained <- load_model(here(output_dir, "Figure1A_MOFA_model_copy.hdf5"))
+
+# AI assisted code. AI-generated with GPT-5.6 Luna, 2026-10-08: filter MOFA2 factors with >1% R2 in at least two datasets. Debugged by Hanneke
+filter_mofa_factors <- function(mofa) {
+  r2 <- mofa@cache$variance_explained$r2_per_factor$group1
+
+  keep <- rowSums(r2 > 1) >= 2
+  factors <- rownames(r2)[keep]
+
+  mofa_subset <- subset_factors(mofa, factors = factors)
+
+  return(mofa_subset)
+}
+# End AI-assisted code
+
+MOFAobject.trained <- filter_mofa_factors(MOFAobject.trained)
+
 data.frame(MOFAobject.trained@cache$variance_explained$r2_total[[1]])
 data.frame(MOFAobject.trained@cache$variance_explained$r2_per_factor[[1]]) |>
   round(2)
@@ -171,7 +187,7 @@ plot_multiple_subtypes <- function(factor_list, use_color = FALSE) {
   )
 }
 plot_multiple_subtypes(c("Factor1", "Factor2", "Factor3", "Factor4"), use_color = TRUE)
-plot_multiple_subtypes(c("Factor5", "Factor6", "Factor7", "Factor8"), use_color = TRUE)
+plot_multiple_subtypes(c("Factor5", "Factor6", "Factor7"), use_color = TRUE)
 
 figure_1c <- plot_multiple_subtypes(c("Factor1", "Factor2", "Factor7"))
 figure_1c
@@ -262,7 +278,7 @@ figure_1 <- plot_grid(
 figure_1
 
 (output_file <- here(output_dir, "Figure_1.png"))
-save_plot(output_file, figure_1, base_height = 0.6 * page_height, base_width = page_width)
+save_plot(output_file, figure_1, base_height = 0.7 * page_height, base_width = 1.1* page_width)
 ```
 
 ### Supplementary Figure 1

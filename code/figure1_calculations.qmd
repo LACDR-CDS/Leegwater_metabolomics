@@ -84,6 +84,16 @@ data_dir <- here("data", "figure_1")
 output_dir <- set_output_dir(here("manuscript", str_glue("Figure1_{datestamp}")))
 ```
 
+Alternatively, when the model has been built already: specify the model file path
+
+```{r}
+rerun_mofa <- FALSE
+
+if (!rerun_mofa) {
+  model_file <- here("manuscript/Figure1_20250528/Figure1A_MOFA_model.hdf5")
+}
+```
+
 ### Figure 1A
 
 -   A: Explained variance after MOFA
@@ -93,10 +103,6 @@ output_dir <- set_output_dir(here("manuscript", str_glue("Figure1_{datestamp}"))
 cell_line_metadata <- read_csv(here("data/cell_line_metadata.csv"))
 dim(cell_line_metadata)
 head(cell_line_metadata)
-
-# Change dashes in cell line names into dots for use in MOFA.
-cell_line_metadata <- cell_line_metadata |>
-  mutate(cell_line = str_replace_all(group, "-", "."))
 
 # Load data for integration
 omics_datasets <- list(
@@ -141,7 +147,13 @@ model_opts$num_factors <- 8
 head(model_opts)
 train_opts <- get_default_training_options(MOFA_object)
 head(train_opts)
+```
 
+
+```{r}
+#| eval: false
+
+if (rerun_mofa) {
 # Build MOFA Object
 MOFA_object <- prepare_mofa(
   object = MOFA_object,
@@ -151,10 +163,45 @@ MOFA_object <- prepare_mofa(
 )
 
 # Run MOFA
-outfile <- here(output_dir, "Figure1A_MOFA_model.hdf5")
+model_file <- here(output_dir, "Figure1A_MOFA_model.hdf5")
 reticulate::use_condaenv("mofa_env")
-MOFA_object_trained <- run_mofa(MOFA_object, outfile)
+MOFA_object_trained <- run_mofa(MOFA_object, model_file)
+}
 ```
+
+Alternatively, when the model has been built already: load the model and put a copy
+in the output directory
+
+```{r}
+if (!rerun_mofa) {
+MOFA_object_trained <- load_model(model_file)
+file.copy(model_file, here(output_dir, "Figure1A_MOFA_model_copy.hdf5"))
+}
+```
+
+After peer review comments: define a clear cutoff for factors to keep. 
+This will be at least 1% variation in at least 1 dataset.
+
+```{r}
+MOFA2::calculate_variance_explained(MOFA_object_trained)
+MOFA2::get_variance_explained(MOFA_object_trained)
+
+# AI assisted code. AI-generated with GPT-5.6 Luna, 2026-10-08: filter MOFA2 factors with >1% R2 in at least two datasets. Debugged by Hanneke
+filter_mofa_factors <- function(mofa) {
+  r2 <- mofa@cache$variance_explained$r2_per_factor$group1
+
+  keep <- rowSums(r2 > 1) >= 2
+  factors <- rownames(r2)[keep]
+
+  mofa_subset <- subset_factors(mofa, factors = factors)
+
+  return(mofa_subset)
+}
+# End AI-assisted code
+
+MOFA_object_trained <- filter_mofa_factors(MOFA_object_trained)
+```
+
 
 ### Figure 1B-C
 
@@ -178,7 +225,7 @@ factors |>
 Note that it is not corrected for multiple testing:
 
 ```{r}
-for (factor in 1:8) {
+for (factor in 1:ncol(get_factors(MOFA_object_trained)$group1)) {
   print(str_glue("*****Correlation proliferation for Factor{factor}*****"))
   cor_nr <- cor(
     factors[["ProliferationRate"]],
@@ -195,7 +242,7 @@ for (factor in 1:8) {
 ```
 
 ```{r}
-for (factor in 1:8) {
+for (factor in 1:ncol(get_factors(MOFA_object_trained)$group1)) {
   print(str_glue("*****ANOVA for Factor{factor}*****"))
   result <- lm(
     as.formula(str_glue("Factor{factor} ~ Subtype_4_categories")),
@@ -204,6 +251,24 @@ for (factor in 1:8) {
   anova_result <- anova(result)
   print(anova_result)
   print(summary(result))
+}
+```
+
+After peer review: Include statistics related to post hoc comparison. I selected Tukey's Honest Significance Difference for MOFA factors based on code from: Leegwater, H., Zhang, Z., Zhang, X., Wang, X., Hankemeier, T., Zweemer, A. J. M., van de Water, B., Danen, E., Hoekstra, M., Harms, A. C., Kindt, A., & Le Dévédec, S. E. (2025). Distinct lipidomic profiles in breast cancer cell lines relate to proliferation and EMT phenotypes. Biochimica et Biophysica Acta (BBA) - Molecular and Cell Biology of Lipids, 1870(7), 159679. https://doi.org/10.1016/j.bbalip.2025.159679
+
+Calculate Tukey HSD
+
+```{r}
+
+for (factor in 1:ncol(get_factors(MOFA_object_trained)$group1)) {
+  print(str_glue("*****ANOVA for Factor{factor}*****"))
+  result <- lm(as.formula(str_glue("Factor{factor} ~ Subtype_4_categories")), data = factors)
+  anova_result <- anova(result)
+  print(anova_result)
+  print(summary(result))
+  
+  significance_levels <-  TukeyHSD(aov(result))
+  print(significance_levels)
 }
 ```
 
