@@ -128,17 +128,6 @@ metabolite_rates <- metabolite_rates |>
     by = c("metabolite" = "feature")
   )
 
-# Add EMT scores from the lipidome manuscript (PMID: 40763903)
-
-EMT_signature <- read_csv(here(
-  data_dir,
-  "EMT_score_per_cell_line.csv"
-)) |>
-  select(CellLine, EMT_score)
-
-metabolite_rates <- metabolite_rates |>
-  left_join(EMT_signature, by = "CellLine")
-
 write_csv(
   metabolite_rates,
   here(output_dir, "Figure2A.csv")
@@ -156,8 +145,7 @@ cell_line_metadata <- cell_line_metadata |>
     factors |>
       select(CellLine, Factor1, Factor2, Factor3, Factor4),
     by = "CellLine"
-  ) |>
-  left_join(EMT_signature, by = "CellLine")
+  )
 ```
 
 Data from previous project from our group PMID:33790333
