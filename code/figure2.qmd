@@ -224,7 +224,7 @@ Transporters of interest in patient tissue
 ```{r fig.height=8, fig.width=6}
 transporter_data_pat <- read_csv(here(output_dir, "Figure2-Supplementary_Fig.csv"))
 
-suppl_fig_1 <- transporter_data_pat |>
+suppl_fig <- transporter_data_pat |>
   mutate(SUBTYPE = str_remove(SUBTYPE, "BRCA_")) |>
   # Sort by same order as cell line data
   mutate(Hugo_Symbol = factor(Hugo_Symbol, levels = transporter_order)) |>
@@ -232,10 +232,7 @@ suppl_fig_1 <- transporter_data_pat |>
   geom_violin(draw_quantiles = 0.5) +
   facet_wrap(~Hugo_Symbol, scales = "free_y", ncol = 2) +
   # theme(legend.position = "bottom") +
-  scale_fill_manual(values = c(
-    "normal" = "grey70",
-    "patient" = "grey40"
-  )) +
+  scale_fill_manual(values = human_tissue_colors) +
   labs(
     fill = "Tissue type", x = NULL,
     y = expression(log[2] ~ gene ~ expression)
@@ -246,9 +243,9 @@ suppl_fig_1 <- transporter_data_pat |>
     legend.justification = "left"
   )
 
-suppl_fig_1
+suppl_fig
 
-save_plot(here(output_dir, "Supplementary_figure.png"), suppl_fig_1)
+save_plot(here(output_dir, "Supplementary_Figure_5.png"), suppl_fig)
 ```
 
 ### Figure 2C

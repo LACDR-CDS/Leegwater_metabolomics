@@ -80,8 +80,10 @@ output_dir <- set_output_dir(here("manuscript", str_glue("Figure4_{datestamp}"))
 #### The targets we selected for the screen:
 
 ```{r}
+targets_dir <- find_most_recent_folder("Figure3")
+targets_dir
 metabolic_targets <- read_csv(here(
-  "manuscript", str_glue("Figure3_{datestamp}"),
+  targets_dir,
   "metabolic_targets.csv"
 ))
 
@@ -121,15 +123,15 @@ proliferation <- proliferation |>
 proliferation <- proliferation |>
   mutate(is_control = case_when(
     target %in% c("mock", "KP control") ~ "siRNA control",
-    target %in% c("ITGB1", "bosutinib") ~ "migration positive control",
-    target == "flavopiridol" ~ "proliferation positive control",
+    target %in% c("ITGB1", "bosutinib") ~ "migration inhibitor positive control",
+    target == "flavopiridol" ~ "proliferation inhibitor positive control",
     TRUE ~ "candidate"
   )) |>
   mutate(is_control = factor(
     is_control,
     levels = c(
-      "siRNA control", "migration positive control",
-      "proliferation positive control", "candidate"
+      "siRNA control", "migration inhibitor positive control",
+      "proliferation inhibitor positive control", "candidate"
     )
   )) |>
   arrange(is_control, mean_prol)
@@ -165,15 +167,15 @@ migration <- migration |>
 migration <- migration |>
   mutate(is_control = case_when(
     target %in% c("mock", "KP control") ~ "siRNA control",
-    target %in% c("ITGB1", "bosutinib") ~ "migration positive control",
-    target == "flavopiridol" ~ "proliferation positive control",
+    target %in% c("ITGB1", "bosutinib") ~ "migration inhibitor positive control",
+    target == "flavopiridol" ~ "proliferation inhibitor positive control",
     TRUE ~ "candidate"
   )) |>
   mutate(is_control = factor(
     is_control,
     levels = c(
-      "siRNA control", "migration positive control",
-      "proliferation positive control", "candidate"
+      "siRNA control", "migration inhibitor positive control",
+      "proliferation inhibitor positive control", "candidate"
     )
   )) |>
   arrange(is_control, mean_migration)
@@ -213,15 +215,15 @@ proliferation_SRB <- proliferation_SRB |>
 proliferation_SRB <- proliferation_SRB |>
   mutate(is_control = case_when(
     target %in% c("mock", "KP control") ~ "siRNA control",
-    target %in% c("ITGB1", "bosutinib") ~ "migration positive control",
-    target == "flavopiridol" ~ "proliferation positive control",
+    target %in% c("ITGB1", "bosutinib") ~ "migration inhibitor positive control",
+    target == "flavopiridol" ~ "proliferation inhibitor positive control",
     TRUE ~ "candidate"
   )) |>
   mutate(is_control = factor(
     is_control,
     levels = c(
-      "siRNA control", "migration positive control",
-      "proliferation positive control", "candidate"
+      "siRNA control", "migration inhibitor positive control",
+      "proliferation inhibitor positive control", "candidate"
     )
   )) |>
   arrange(is_control, mean_proliferation_SRB)

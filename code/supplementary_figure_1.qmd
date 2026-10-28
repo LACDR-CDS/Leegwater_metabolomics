@@ -1,0 +1,111 @@
+---
+title: "Supplementary Figure 1"
+author: "Hanneke Leegwater"
+date: "`r Sys.Date()`"
+format:   
+  html:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    df_print: kable
+---
+
+## Template Used
+
+LACDR-ISA - Assay (General) v1.0.0
+
+## Title
+
+`r rmarkdown::metadata$title`
+
+## Date (dd-MM-yyyy)
+
+`r format(Sys.time(), format = "%d-%m-%Y")`
+
+## Description or Purpose
+
+Show correlation between EMT phenotype and subtype
+
+### Data sources
+
+-   Metadata on cell line phenotypes
+
+## Results
+
+### Preparations
+
+#### Load R libraries
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+#### Visualization settings for the report
+
+```{r}
+options(digits = 3) # visualizations of tables
+theme_set(theme_classic())
+```
+
+#### Custom functions
+
+```{r}
+source(here("code/functions/helpers.R"))
+source(here("code/functions/figure_helpers.R"))
+source(here("code/functions/color_scales.R"))
+```
+
+#### Set input and output directories
+
+Show base path to the project that is used in the analysis.
+
+```{r}
+here()
+```
+
+Set output data directory and create if it does not exist.
+
+```{r}
+source(here("code/functions/helpers.R"))
+```
+
+```{r}
+datestamp <- get_datestamp()
+output_dir <- set_output_dir(here("manuscript", str_glue("Supplementary_Figures_{datestamp}")))
+```
+
+### Load data
+
+```{r}
+# Metadata on cell line names
+data_dir <- here("data", "figure_1")
+cell_line_metadata <- read_csv(here("data/cell_line_metadata.csv"))
+dim(cell_line_metadata)
+head(cell_line_metadata)
+```
+
+#### Build plot
+
+```{r}
+#| fig-height: 2
+#| fig-width: 3
+p <- cell_line_metadata |>
+  ggplot(aes(x = EMT_score, y = ProliferationRate, color = Subtype_4_categories)) +
+  geom_point() +
+  scale_color_manual(values = color_legend_Subtype) +
+  labs(x = "EMT score", y = "proliferation rate (70/doubling time)", color = "Subtype") +
+  theme(legend.position = "right")
+p
+```
+
+Save to file.
+
+```{r}
+save_plot(
+  here(output_dir, str_c("Supplementary_Figure_1.png")),
+  plot = p,
+  base_height = cm_to_inch(5),
+  base_width = cm_to_inch(7))
+```
+

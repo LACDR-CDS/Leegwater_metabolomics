@@ -94,8 +94,9 @@ Same as for Figure 1 but without autoscaling. Now it is min-max scaling.
 Select transporters for top most extreme rates in factor 1. I chose cutoff weight 0.5.
 
 ```{r}
+(factors_dir <- find_most_recent_folder("Figure1"))
 factors <- read_csv(here(
-  "manuscript", str_glue("Figure1_{datestamp}"),
+  factors_dir,
   "Figure1BC.csv"
 ))
 
@@ -110,10 +111,9 @@ metabolite_rates <- read_csv(here(
   left_join(factors, by = "cell_line")
 head(metabolite_rates)
 
-weights <- read_csv(here(
-  "manuscript", str_glue("Figure1_{datestamp}"),
-  "Figure1DE.csv"
-))
+(weights_dir <- find_most_recent_folder("Figure1"))
+
+weights <- read_csv(here(weights_dir,"Figure1DE.csv"))
 
 rates_of_interest <- weights |>
   filter(view == "metabolite rates") |>
@@ -298,7 +298,8 @@ metadata <- read_tsv(
     cols = c(normal, patient),
     names_to = "design_group", values_to = "patient_ID"
   ) |>
-  mutate(SUBTYPE = ifelse(design_group == "normal", "normal tissue", SUBTYPE))
+  mutate(SUBTYPE = ifelse(design_group == "normal", "control", SUBTYPE)) |>
+  mutate(design_group = ifelse(design_group == "normal", "cancer-free breast tissue control", design_group))
 dim(metadata)
 head(metadata)
 tail(metadata)

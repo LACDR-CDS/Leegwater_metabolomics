@@ -110,8 +110,8 @@ read_dataset <- function(file_path) {
   return(df)
 }
 control_levels <- c(
-  "siRNA control", "migration positive control",
-  "proliferation positive control", "candidate"
+  "siRNA control", "migration inhibitor positive control",
+  "proliferation inhibitor positive control", "candidate"
 )
 significant_hit_levels <- c(control_levels, "not significant", "FDR < 0.1")
 proliferation <- read_dataset(here(output_dir, "proliferation.csv"))

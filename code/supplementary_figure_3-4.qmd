@@ -1,0 +1,247 @@
+---
+title: "Supplementary Figure 3 and 4"
+author: "Hanneke Leegwater"
+date: "`r Sys.Date()`"
+format:   
+  html:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    df_print: kable
+---
+
+## Template Used
+
+LACDR-ISA - Assay (General) v1.0.0
+
+## Title
+
+`r rmarkdown::metadata$title`
+
+## Date (dd-MM-yyyy)
+
+`r format(Sys.time(), format = "%d-%m-%Y")`
+
+## Description or Purpose
+
+Show differences in concentrations for individual metabolites as function of proliferation and subtype.
+
+### Background
+
+### Data sources
+
+-   Cleaned, preprocessed, normalized, scaled metabolomics data
+    -   Rates from Figure 2
+    -   Intracellular concentrations from Figure 1
+-   Metadata on cell line phenotypes
+
+### Analysis plan
+
+Build a plot for each metabolite, where x = proliferation, y = metabolite, and color is subtype.
+
+## Results
+
+### Preparations
+
+#### Load R libraries
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+#### Visualization settings for the report
+
+```{r}
+options(digits = 3) # visualizations of tables
+theme_set(theme_classic())
+```
+
+#### Custom functions
+
+```{r}
+source(here("code/functions/helpers.R"))
+source(here("code/functions/figure_helpers.R"))
+source(here("code/functions/color_scales.R"))
+```
+
+#### Set input and output directories
+
+Show base path to the project that is used in the analysis.
+
+```{r}
+here()
+```
+
+Set output data directory and create if it does not exist.
+
+```{r}
+datestamp <- get_datestamp()
+output_dir <- set_output_dir(here("manuscript", str_glue("Supplementary_Figures_{datestamp}")))
+```
+
+#### Custom functions
+
+```{r}
+pivot_longer_metabolomics <- function(metabolomics) {
+  metabolomics |>
+    rownames_to_column("metabolite") |>
+    pivot_longer(!metabolite, names_to = "cell_line", values_to = "value")
+  
+}
+transpose_metabolomics <- function(metabolomics) {
+  # From metabolites in rownames and cells in columns to 
+  # cells in rownames and metabolites to columns
+  metabolomics |>
+    pivot_longer_metabolomics() |>
+    pivot_wider(names_from = metabolite, values_from = value) |>
+    column_to_rownames("cell_line")
+}
+```
+
+
+#### Statistics per metabolite
+
+The code in this section `Statistics per metabolite` is adapted from Leegwater et al 2025 ( "code\biology_manuscript_files_and_figures\Calculations_to_get_all_data_for_all_figures_after_peerreview.qmd") Figure 4, DOI: 10.1016/j.bbalip.2025.159679.
+
+
+```{r}
+#| eval: false
+get_proliferation_metadata <- function(cell_line_metadata) {
+  ## Filter to keep only cell lines for which we have proliferation rates
+  proliferation_metadata <- cell_line_metadata |>
+    dplyr::select(cell_line, Subtype_4_categories, ProliferationRate) |>
+    filter(!is.na(ProliferationRate))
+}
+
+create_design_prol_subtype <- function(proliferation_metadata) {
+  # Create a design object
+  design <- model.matrix(
+    ~ 0 + proliferation_metadata$Subtype_4_categories + 
+      proliferation_metadata$ProliferationRate +
+      proliferation_metadata$Subtype_4_categories:proliferation_metadata$ProliferationRate
+  )
+  
+  rownames(design) <- proliferation_metadata$cell_line
+  colnames(design) <- str_replace_all(colnames(design), "proliferation_metadata\\$", "")
+  colnames(design) <- str_replace_all(colnames(design), "Subtype_4_categories", "")
+  colnames(design) <- str_replace_all(colnames(design), "-like", "")
+  colnames(design) <- str_replace_all(colnames(design), ":", ".") # needed for contrast fits
+  return(design)
+}
+filter_metabolomics_prol <- function(metabolomics, cell_lines) {
+  # Keep only cell lines for which we have proliferation rates
+  dataset <- metabolomics |>
+    select(any_of(cell_lines))
+}
+```
+
+### Load data
+Build a plot for each metabolite, where x = proliferation, y = metabolite, and color is subtype.
+
+```{r}
+# Metadata on cell line names
+cell_line_metadata <- read_csv(here("data/Cell_line_metadata.csv"))
+dim(cell_line_metadata)
+head(cell_line_metadata)
+
+# Change dashes in cell line names into dots to match preprocessed data
+cell_line_metadata <- cell_line_metadata |>
+  mutate(cell_line = str_replace_all(group, "-", "."))
+
+# Load data
+data_dir <- "data"
+omics_datasets <- list(
+  "amines"                  = read_csv(here(data_dir, "figure_1/amines.csv")) |>
+    column_to_rownames("amine_metabolite"),
+  "polar metabolomics"      = read_csv(here(data_dir, "figure_1/polar.csv")) |>
+    column_to_rownames("polar_metabolite"),
+  "metabolite rates minmax" = read_csv(here(data_dir, "figure_2/metabolite_rates_scaled_minmax.csv")) |>
+    column_to_rownames("metabolite")
+)
+
+# Keep only metadata for measured cell lines
+measured_cell_lines <- lapply(omics_datasets, colnames) |>
+  unlist() |>
+  unique()
+
+dim(cell_line_metadata)
+cell_line_metadata <- filter(cell_line_metadata, cell_line %in% measured_cell_lines)
+dim(cell_line_metadata)
+```
+
+### Figure
+
+#### Build plot
+
+Boxplot is based on Leegwater et al. 2024, DOI:10.1002/cem.3636 -> script All_figures.Rmd
+
+X axis adapted from # Source - https://stackoverflow.com/a/60650595 Posted by jan-glx, modified by community. See post 'Timeline' for change history. Retrieved 2026-10-15, License - CC BY-SA 4.0
+
+```{r}
+violin_metabolite_plot <- function(metabolomics, ylab = "scaled metabolite") {
+  df_plot <- metabolomics |>
+    pivot_longer_metabolomics() |>
+    left_join(cell_line_metadata, by = "cell_line") |>
+    # only plot when proliferation data is available
+    filter(!is.na(ProliferationRate))
+  p <- df_plot |>
+    ggplot(aes(x = Subtype_4_categories, y = value, fill = Subtype_4_categories)) +
+      geom_violin() +
+      geom_boxplot(position=position_dodge(1), width=0.2, fill = "white") +
+      scale_x_discrete(guide = guide_axis(angle = 90)) +
+      scale_fill_manual(values = color_legend_Subtype) +
+      labs(y = ylab, x = "Cell line subtype") +
+      facet_wrap(~metabolite) +
+      theme(legend.position = "bottom")
+  return(p)
+}
+```
+
+```{r}
+scatter_metabolite_plot <- function(metabolomics, ylab = "scaled metabolite") {
+  df_plot <- metabolomics |>
+    pivot_longer_metabolomics() |>
+    left_join(cell_line_metadata, by = "cell_line") |>
+    # only plot when proliferation data is available
+    filter(!is.na(ProliferationRate))
+  p <- df_plot |>
+    ggplot(aes(x = ProliferationRate, y = value, color = Subtype_4_categories)) +
+      geom_hline(yintercept = 0, color = "grey90") +
+      geom_point() +
+      scale_color_manual(values = color_legend_Subtype) +
+      labs(y = ylab, x = "Proliferation rate (70/doubling time)", color = "Subtype") +
+      facet_wrap(~metabolite) +
+      theme(legend.position = "bottom")
+  return(p)
+}
+```
+
+Create for each omics layer and save to file.
+
+```{r}
+#| fig-height: 18/2.54
+#| fig-width: 14/2.54
+
+omics_layers <- names(omics_datasets)
+for (omics_layer in omics_layers) {
+  print(str_c("Plotting ", omics_layer))
+  metabolomics <- omics_datasets[[omics_layer]]
+  p_scatter <- scatter_metabolite_plot(metabolomics)
+  #plot(p_scatter)
+  p_violin <- violin_metabolite_plot(metabolomics)
+  #plot(p_violin)
+  save_plot(
+    here(output_dir, str_c("Supplementary_Figure_3_", omics_layer, ".png")),
+    plot = p_scatter,
+    base_height = cm_to_inch(18),
+    base_width = cm_to_inch(14))
+  save_plot(
+    here(output_dir, str_c("Supplementary_Figure_4_", omics_layer, ".png")),
+    plot = p_violin,
+    base_height = cm_to_inch(18),
+    base_width = cm_to_inch(14))
+}
+```
+
+

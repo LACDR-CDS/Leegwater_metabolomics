@@ -1,0 +1,101 @@
+---
+title: "Supplementary Table 2"
+author: "Hanneke Leegwater"
+date: "`r Sys.Date()`"
+format: 
+  html:
+    self-contained: true
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    df-print: kable
+---
+
+## Template Used
+
+LACDR-ISA - Assay (General) v1.0.0
+
+## Title
+
+`r rmarkdown::metadata$title`
+
+## Date (dd-MM-yyyy)
+
+`r format(Sys.time(), format = "%d-%m-%Y")`
+
+## Description or Purpose
+
+To combine all results from MOFA into an Excel Supplementary Table.
+
+### Data sources
+
+- Figure 1 MOFA factors - contributions from cell lines
+- Figure 1 MOFA factor weights - feature weights for each factor
+
+## Results
+
+### Preparations
+
+#### Load R libraries
+
+```{r}
+library(tidyverse)
+library(here)
+library(writexl)
+```
+
+#### Custom functions
+
+```{r}
+source(here("code/functions/helpers.R"))
+```
+
+#### Set input and output directories
+
+Show base path to the project that is used in the analysis.
+
+```{r}
+here()
+```
+
+Set output data directory and create if it does not exist.
+
+```{r}
+datestamp <- get_datestamp()
+output_dir <- set_output_dir(here("manuscript", str_glue("Tables_{datestamp}")))
+```
+### Open MOFA factors and weights from Figure 1
+
+```{r}
+factors <- read_csv(here("manuscript/Figure1_20260901/Figure1BC.csv"))
+
+dim(factors)
+head(factors)
+```
+
+```{r}
+weights <- read_csv(here("manuscript/Figure1_20260901/Figure1DE.csv"))
+
+dim(weights)
+head(weights)
+```
+
+### Write to supplementary Table
+
+```{r}
+excel_sheets <- list(
+  "factors" = factors,
+  "weights" = weights
+)
+write_xlsx(excel_sheets, here(output_dir, "Supplementary_Table_2.xlsx"))
+```
+
+## Conclusion
+
+## Additional information
+
+### Session info
+
+```{r}
+sessionInfo()
+```

@@ -1,0 +1,103 @@
+---
+title: "Supplementary Table 3"
+author: "Hanneke Leegwater"
+date: "`r Sys.Date()`"
+format: 
+  html:
+    self-contained: true
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    df-print: kable
+---
+
+## Template Used
+
+LACDR-ISA - Assay (General) v1.0.0
+
+## Title
+
+`r rmarkdown::metadata$title`
+
+## Date (dd-MM-yyyy)
+
+`r format(Sys.time(), format = "%d-%m-%Y")`
+
+## Description or Purpose
+
+To combine all results from complex heatmaps in Figure 2C and 2D into a table.
+
+### Data sources
+
+- Figure 2 pairwise correlations based on Recon3D genes - Pearson correlations
+- Figure 2 pairwise correlations based on Reactome genes - Pearson correlations
+- Figure 2 correlations between gene expression and EMT scores and proliferation rates.
+
+## Results
+
+### Preparations
+
+#### Load R libraries
+
+```{r}
+library(tidyverse)
+library(here)
+library(writexl)
+```
+
+#### Custom functions
+
+```{r}
+source(here("code/functions/helpers.R"))
+```
+
+#### Set input and output directories
+
+Show base path to the project that is used in the analysis.
+
+```{r}
+here()
+```
+
+Set output data directory and create if it does not exist.
+
+```{r}
+datestamp <- get_datestamp()
+output_dir <- set_output_dir(here("manuscript", str_glue("Tables_{datestamp}")))
+```
+
+Open all correlations files from Figure 2.
+
+```{r}
+data_dir <- find_most_recent_folder("Figure2", here("manuscript"))
+print(data_dir)
+recon3d_gene_correlations <- read_csv(here("manuscript", data_dir, "Figure2C.csv"))
+recon3d_phenotype_correlations <- read_csv(here("manuscript", data_dir, "Figure2C_correlations.csv"))
+
+reactome_gene_correlations <- read_csv(here("manuscript", data_dir, "Figure2D.csv"))
+reactome_phenotype_correlations <- read_csv(here("manuscript", data_dir, "Figure2D_correlations.csv"))
+```
+
+### Write to supplementary Table
+
+```{r}
+excel_sheets <- list(
+  "recon3d_gene_pairwise_correlations"   = recon3d_gene_correlations,
+  "recon3d_gene_phenotype_correlations"  = recon3d_phenotype_correlations,
+  "reactome_gene_pairwise_correlations"  = reactome_gene_correlations,
+  "reactome_gene_phenotype_correlations" = reactome_phenotype_correlations
+)
+write_xlsx(excel_sheets, here(output_dir, "Supplementary_Table_3.xlsx"))
+```
+
+## Conclusion
+
+Supplementary Table 3 was created.
+
+## Additional information
+
+### Session info
+
+```{r}
+sessionInfo()
+```

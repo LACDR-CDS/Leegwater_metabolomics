@@ -73,8 +73,13 @@ color_scale_FDR_subtype <- c(
 
 siRNA_colors <- c(
   "siRNA control" = "black",
-  "migration positive control" = "grey20",
-  "proliferation positive control" = "red",
+  "migration inhibitor positive control" = "grey20",
+  "proliferation inhibitor positive control" = "red",
   "not significant" = "grey",
   "FDR < 0.1" = "darkblue"
+)
+
+human_tissue_colors <- c(
+  "cancer-free breast tissue control" = "grey70",
+  "patient" = "grey40"
 )

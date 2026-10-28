@@ -1,4 +1,5 @@
 # Functions for Figures and Figure sizes
+library(cowplot)
 
 ############ Figure sizes ##############
 print("Sourcing cm_to_inch")
