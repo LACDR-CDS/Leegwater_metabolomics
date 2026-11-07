@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24038153.svg)](https://doi.org/10.5281/zenodo.24038153)
+
 # Metabolomics in breast cancer cell lines
 
 This repository contains code to analyze data and generate figures for the following manuscript:
