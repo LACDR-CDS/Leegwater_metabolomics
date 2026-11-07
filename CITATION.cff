@@ -31,6 +31,8 @@ title: "Code for: Multi-omics characterization of breast cancer metabolism ident
 version: 1.0.2
 date-released: 2026-11-07
 identifiers: 
-      - type: doi
-        value: 10.64898/2026.03.06.710028
+  - type: doi
+    value: 10.64898/2026.03.06.710028
+  - type: doi
+    value: 10.5281/zenodo.24038153
 license: MIT
